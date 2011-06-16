@@ -1,0 +1,111 @@
+body {
+    background-color: white;
+    background-image: url(../images/full_temp.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    font-family: Helvitica, Arial, Verdana;
+    margin: 0px;
+}
+
+#overview .sponsers span {
+    display: inline-block;
+}
+
+#city {
+    background-image: url(../images/city_scape.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 635px;
+    position: absolute;
+    top: 280px;
+    width: 100%;
+}
+
+#middle-bar {
+    background-image: url(../images/middle_bar.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 50px;
+    position: absolute;
+    top: 1064px;
+    width: 100%;
+    
+    
+    visibility: hidden;
+}
+
+#branding {
+    border: 1px solid red;
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+
+#hero {
+    left: -77px;
+    position:relative;   
+}
+
+#slogan {
+    background-image: url(../images/Slogan_background.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    height: 67px;
+    left: 235px;
+    padding: 15px 20px 10px 30px;
+    position: absolute;
+    text-align: center;
+    top: 483px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 442px;
+}
+
+#branding .quote {
+    position: absolute;
+    top: 120px;
+}
+
+#branding #goeshere {
+    left: 39px;
+}
+
+#branding #curiousp {
+    right: 79px;
+}
+
+#content {
+    /* background-image: url(../images/broken_paper.png); */
+    background-position: top center;
+    background-repeat: no-repeat;
+    border: 1px solid red;
+    margin: 0 auto;
+    padding: 42px 10px 20px 10px;
+    position:relative;
+    top: -168px;
+    width: 885px;
+}
+
+#content #overview {
+    text-align: center;
+}
+
+#content #overview * {
+    text-align: inherit;
+}
+
+#content #overview .content {
+    font-size: 12px;
+    line-height: 150%;
+    margin: 0 auto;
+    width: 550px;
+}
+
+#content #overview .sponsers {
+    letter-spacing: 15px;
+    margin-top: 27px;
+    position: relative;
+}

@@ -1,0 +1,17 @@
+/* Custom Omega Subtheme Default stylesheet */
+
+#region-branding {
+    
+}
+
+#region-content {
+    background-image: url(../images/broken_paper.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+#block-block-2 {
+    position: absolute;
+    top: 200px;
+    z-index: -1;
+}
