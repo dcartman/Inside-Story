@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    background-image: url(../images/full_temp.png);
+    /* background-image: url(../images/background_full.png); */
     background-position: top center;
     background-repeat: no-repeat;
     font-family: Helvitica, Arial, Verdana;
@@ -30,12 +30,10 @@ body {
     top: 1064px;
     width: 100%;
     
-    
-    visibility: hidden;
+    display: none;
 }
 
 #branding {
-    border: 1px solid red;
     margin: 0 auto;
     position: relative;
     width: 960px;
@@ -77,16 +75,32 @@ body {
     right: 79px;
 }
 
-#content {
-    /* background-image: url(../images/broken_paper.png); */
+#content-shadow {
+    background-image: url(../images/content_top_shadow.png);
     background-position: top center;
     background-repeat: no-repeat;
-    border: 1px solid red;
     margin: 0 auto;
-    padding: 42px 10px 20px 10px;
     position:relative;
     top: -168px;
-    width: 885px;
+    width: 861px;
+}
+
+#content {
+    background-image: url(../images/content_paper.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    bottom: 0px;
+    height: auto;
+    left: 0px;
+    margin: 0px auto;
+    padding: 42px 0px 20px 0px;
+    position:relative;
+    right:0px;
+    top: 0px;
+    width: 861px;
+    
+    box-shadow: 0px 15px 20px 0px black;
+    -webkit-box-shadow: 0px 15px 20px 0px black;
 }
 
 #content #overview {
@@ -108,4 +122,21 @@ body {
     letter-spacing: 15px;
     margin-top: 27px;
     position: relative;
+}
+
+#content-shadow #crack {
+    left: auto;
+    position: absolute;
+    right: -127px;
+    top: 447px;
+    width: auto;
+    z-index: 1;
+}
+
+#yellow-backing {
+    position: absolute;
+    top: 1074px;
+    overflow-x:hidden;
+    
+    display: none;
 }
