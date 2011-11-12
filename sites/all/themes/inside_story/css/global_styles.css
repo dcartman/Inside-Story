@@ -1,0 +1,14 @@
+body {
+	background-color:black;
+}
+
+#page-wrapper{
+	background: url("../images/background.jpg") no-repeat black;
+}
+
+
+#page{
+	width: 1185px;
+	min-height: 1185px;
+	background: #fcca95;
+}
