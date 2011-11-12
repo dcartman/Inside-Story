@@ -21,6 +21,7 @@ regions[copyright] = Copyright
 regions[collapsible] = Collapsible
 regions[page_bottom] = Page Bottom
 regions[hero] = Hero Block
+regions[header_image] = Header Image
 
 features[] = logo
 features[] = favicon

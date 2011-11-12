@@ -69,8 +69,16 @@
 <div id="page-wrapper">
     <div id="page">
 
-        <div id="header"><div class="section clearfix">
-
+        <div id="header">
+        	<div class="section clearfix">
+				<?php if ($page['navigation']): ?>
+    				<div id="navigation">
+        				<div class="section clearfix">
+            				<?php print render($page['navigation']); ?>
+        				</div>
+    				</div>
+				<?php endif; ?>
+				
                 <?php if ($site_name || $site_slogan): ?>
                     <div id="name-and-slogan">
                         <?php if ($site_name): ?>
@@ -92,13 +100,7 @@
                         <?php endif; ?>
                     </div> <!-- /#name-and-slogan -->
                     
-                    <?php if ($page['navigation']): ?>
-        				<div id="navigation">
-            				<div class="section clearfix">
-                				<?php print render($page['navigation']); ?>
-            				</div>
-        				</div>
-    				<?php endif; ?>
+                    
                 <?php endif; ?>
 
                 <?php print render($page['header']); ?>

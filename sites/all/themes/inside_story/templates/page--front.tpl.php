@@ -69,8 +69,22 @@
 <div id="page-wrapper">
     <div id="page">
 
-        <div id="header"><div class="section clearfix">
-
+        <div id="header">
+        	<?php if($page['header_image']): ?>
+        		<!--custom header image block setup-->
+        		<div class="custom_header">
+        	<?php endif; ?>
+        		
+        	<div class="section clearfix">
+        		
+				<?php if ($page['navigation']): ?>
+    				<div id="navigation">
+        				<div class="section clearfix">
+            				<?php print render($page['navigation']); ?>
+        				</div>
+    				</div>
+				<?php endif; ?>
+				
                 <?php if ($site_name || $site_slogan): ?>
                     <div id="name-and-slogan">
                         <?php if ($site_name): ?>
@@ -90,21 +104,18 @@
                         <?php if ($site_slogan): ?>
                             <div id="site-slogan"><?php print $site_slogan; ?></div>
                         <?php endif; ?>
-                    </div> <!-- /#name-and-slogan -->
-                    
-                    <?php if ($page['navigation']): ?>
-        				<div id="navigation">
-            				<div class="section clearfix">
-                				<?php print render($page['navigation']); ?>
-            				</div>
-        				</div>
-    				<?php endif; ?>
+                    </div> <!-- /#name-and-slogan -->                                       
                 <?php endif; ?>
 
                 <?php print render($page['header']); ?>
-
-            </div>
-        </div> <!-- /.section, /#header -->
+            </div><!-- /.section -->
+            
+            <?php if($page['header_image']): ?>
+            	<!-- END custom header image block -->
+        		</div>
+        	<?php endif; ?>
+        	
+        </div> <!-- /#header -->
         
         <?php if ($page['hero']): ?>
             <div id="hero">

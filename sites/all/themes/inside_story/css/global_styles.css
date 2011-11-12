@@ -3,12 +3,44 @@ body {
 }
 
 #page-wrapper{
-	background: url("../images/background.jpg") no-repeat black;
+	background: #000 url("../images/background.jpg") no-repeat center top;
 }
 
 
 #page{
-	width: 1185px;
+	width: 1155px;
 	min-height: 1185px;
-	background: #fcca95;
+	background: white;
+	padding: 0;
+}
+
+#header {
+	background: #000 url("../images/hero_top.jpg") no-repeat center top;
+	height: 270px;	
+}
+
+#header .section{
+	padding: 0;
+	margin: 0;	
+	position:relative;
+}
+
+#header .custom_header{
+	z-index:2;
+}
+
+#navigation {
+    margin: 0 auto;
+    position:relative;
+    top: 35px;
+    height: 40px;
+    background: black;
+    width: 960px;
+    z-index: 10;
+}
+
+#name-and-slogan{
+	margin: 80px 0 0 0;
+	display:none;
+	z-index: 10;
 }
