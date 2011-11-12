@@ -12,6 +12,7 @@ body {
 	min-height: 1185px;
 	background: white;
 	padding: 0;
+	background-color: black;
 }
 
 #header {
@@ -26,7 +27,7 @@ body {
 }
 
 #header .custom_header{
-	z-index:2;
+	z-index:2; 
 }
 
 #navigation {
@@ -34,7 +35,6 @@ body {
     position:relative;
     top: 35px;
     height: 40px;
-    background: black;
     width: 960px;
     z-index: 10;
 }
@@ -43,4 +43,95 @@ body {
 	margin: 80px 0 0 0;
 	display:none;
 	z-index: 10;
+}
+
+
+#main-wrapper p, #main-wrapper h1, #main-wrapper h2, #main-wrapper h3{
+	color: white;
+} 
+
+#main-wrapper a{ 
+	color: #F2A44B;
+} 
+#main-wrapper a:hover{
+	color:#ff7;
+	text-decoration:underline;
+}
+
+
+#footer p, #footer h1, #footer h2, #footer h3, #footer span{
+	color: white;
+}
+
+#footer a{
+	color: #F2A44B;
+}
+#footer a:hover{
+	color: #ff7;
+	text-decoration:underline;
+}
+
+
+#navigation .block-menu-block h2{
+	display: none;
+}
+
+#navigation .region-navigation .block-menu-block ul, #block-system-main-menu ul, #block-menu-menu-secondary-links ul{
+    height: 40px;
+    list-style: none outside none;
+    padding: 0;
+}
+
+#navigation .region-navigation .block-menu-block ul li, #block-system-main-menu ul li, #block-menu-menu-secondary-links ul li{
+    height: 40px;
+    list-style: none outside none;
+    width: 128px;    
+    margin: 0 1px 0 0;
+    padding: 0;
+    background-color:black;
+     display: block;
+    float: left;
+}
+
+#navigation .region-navigation .block-menu-block ul li a, #block-system-main-menu ul li a, #block-menu-menu-secondary-links ul li a{
+	color:white;
+	font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    display:block;
+}
+
+#secondary_navigation .block-menu-block h2{
+	display: none;
+}
+
+#secondary_navigation {
+	margin-left: 15px;
+}
+
+#secondary_navigation .block-menu-block ul{
+    height: 40px;
+    list-style: none outside none;
+    padding: 0;
+}
+
+#secondary_navigation .block-menu-block ul li{
+    height: 40px;
+    list-style: none outside none;
+    width: 128px;    
+    margin: 0 1px 0 0;
+    padding: 0;
+    background-color:#999;
+    display: block;
+    float: left;
+}
+
+#secondary_navigation .block-menu-block ul li a{
+	color:white;
+	font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    display:block;
 }

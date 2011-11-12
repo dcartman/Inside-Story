@@ -69,12 +69,7 @@
 <div id="page-wrapper">
     <div id="page">
 
-        <div id="header">
-        	<?php if($page['header_image']): ?>
-        		<!--custom header image block setup-->
-        		<div class="custom_header">
-        	<?php endif; ?>
-        		
+        <div id="header">        		
         	<div class="section clearfix">
         		
 				<?php if ($page['navigation']): ?>
@@ -108,12 +103,7 @@
                 <?php endif; ?>
 
                 <?php print render($page['header']); ?>
-            </div><!-- /.section -->
-            
-            <?php if($page['header_image']): ?>
-            	<!-- END custom header image block -->
-        		</div>
-        	<?php endif; ?>
+            </div><!-- /.section -->                      
         	
         </div> <!-- /#header -->
         
@@ -133,6 +123,12 @@
 
         <div id="main-wrapper">
         	<div id="main" class="clearfix">
+        		<?php if($page['header_image']): ?>
+				<!--secondary menu block setup-->
+					<div id="secondary_navigation">			
+						<?php print render($page['secondary_nav']); ?>
+				    </div>
+				<?php endif; ?>
 
                 <?php if ($page['sidebar_first']): ?>
                     <div id="sidebar-first" class="column sidebar">
@@ -185,3 +181,9 @@
 
     </div>
 </div> <!-- /#page, /#page-wrapper -->
+<?php if($page['header_image']): ?>
+	<!--custom header image block setup-->
+	
+		<?php print render($page['header_image']); ?>
+	
+<?php endif; ?>

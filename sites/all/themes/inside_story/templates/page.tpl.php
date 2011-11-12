@@ -116,7 +116,12 @@
 
         <div id="main-wrapper">
         	<div id="main" class="clearfix">
-
+				<?php if($page['header_image']): ?>
+				<!--secondary menu block setup-->
+					<div id="secondary_navigation">
+						<?php print render($page['secondary_nav']); ?>
+					</div>
+				<?php endif; ?>
                 <?php if ($page['sidebar_first']): ?>
                     <div id="sidebar-first" class="column sidebar">
                     	<div class="section">
