@@ -1,0 +1,5 @@
+; $Id$
+name = "Custom View Modes"
+description = "Create additional view modes for Media and Nodes."
+core = 7.x
+package = Other
