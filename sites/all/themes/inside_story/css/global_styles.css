@@ -1,5 +1,7 @@
 body {
 	background-color:black;
+	margin: 0 auto;
+	top: 0;
 }
 
 #page-wrapper{
@@ -43,6 +45,14 @@ body {
 	margin: 80px 0 0 0;
 	display:none;
 	z-index: 10;
+}
+
+
+#hero{
+	height:670px;
+	width: 1155px;
+	background: url("../images/hero_bottom_play_words.jpg") no-repeat center top black;
+	position:relative;
 }
 
 
