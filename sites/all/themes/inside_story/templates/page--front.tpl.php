@@ -123,7 +123,7 @@
 
         <div id="main-wrapper">
         	<div id="main" class="clearfix">
-        		<?php if($page['header_image']): ?>
+        		<?php if(isset($page['header_image']) && isset($page['secondary_nav'])): ?>
 				<!--secondary menu block setup-->
 					<div id="secondary_navigation">			
 						<?php print render($page['secondary_nav']); ?>
@@ -181,7 +181,7 @@
 
     </div>
 </div> <!-- /#page, /#page-wrapper -->
-<?php if($page['header_image']): ?>
+<?php if(isset($page['header_image'])): ?>
 	<!--custom header image block setup-->
 	
 		<?php print render($page['header_image']); ?>
