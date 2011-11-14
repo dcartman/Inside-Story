@@ -1,15 +1,15 @@
 <?php
-function custom_view_modes_help($path, $arg) {
+function content_view_modes_help($path, $arg) {
     switch ($path) {
     case "admin/help#media_view_modes":
-        return '<p>'. t("Creates additional view modes for Media and Nodes.") .'</p>';
+        return '<p>'. t("Creates Additional content view modes") .'</p>';
         break;
     }
 }
  
-function custom_view_modes_theme() {
+function content_view_modes_theme() {
     return array(
-                 'media_view_modes_javascript' => array(
+                 'content_view_modes_javascript' => array(
                                                    'arguments' => array(),
                                                    ),
                  );   
@@ -17,24 +17,22 @@ function custom_view_modes_theme() {
 
 
 //Add more view modes for Media formatting. 
-function custom_view_modes_entity_info_alter(&$entity_info) {
+function content_view_modes_entity_info_alter(&$entity_info) {
 
   //Not sure if it's still an issue, but a previous commenter noted that Media module only recognizes view modes with the prefix media_. Also, as you can see by the entity type 'file', this is for after the switch-to-file-entity patch.
-  $entity_info['file']['view modes']['slide_show'] = array(
-    'label' => t('Slide Show'),
-    'custom settings' => TRUE
+  //$entity_info['file']['view modes']['media_front_slide_show'] = array(
+   // 'label' => t('Front Slide Show'),
+   // 'custom settings' => TRUE,
+  //);
+  
+  $entity_info['node']['view modes']['cast_profile'] = array(
+  	'label' => t('Cast Profile'),
+  	'custom settings' => TRUE
   );
-  $entity_info['node']['view modes']['slide_show'] = array(
-      'label' => t('Slide Show'),
-      'custom settings' => TRUE
-  );
-  $entity_info['file']['view modes']['popup'] = array(
-    'label' => t('Popup'),
-    'custom settings' => TRUE
-  );
-  $entity_info['node']['view modes']['popup'] = array(
-      'label' => t('Popup'),
-      'custom settings' => TRUE
+  
+  $entity_info['node']['view modes']['filmmaker_profile'] = array(
+  	'label' => t('Filmmaker Profile'),
+  	'custom settings' => TRUE
   );
  
 }
@@ -42,14 +40,16 @@ function custom_view_modes_entity_info_alter(&$entity_info) {
 /**
 * Implements hook_preprocess_node().
 */
-function custom_view_modes_preprocess_node(&$vars) {
+function content_view_modes_preprocess_node(&$vars) {
   if($vars['view_mode'] == 'teaser') {
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__teaser';
   }
-  if($vars['view_mode'] == 'slide_show') {
-      $vars['theme_hook_suggestions'][] = 'node__'. $vars['type'] .'__front_slide_show';
+  
+  if($vars['view_mode'] == 'filmmaker_profile') {
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__filmmaker_profile';
   }
-  if($vars['view_mode'] == 'popup') {
-      $vars['theme_hook_suggestions'][] = 'node__'. $vars['type'] .'__popup';
+  
+  if($vars['view_mode'] == 'cast_profile') {
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__cast_profile';
   }
 }
