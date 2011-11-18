@@ -1,0 +1,36 @@
+/* 
+    Document   : callouts
+    Created on : Nov 17, 2011, 10:31:34 PM
+    Author     : danielcarter
+    Description:
+        Styles for the home page callout region and blocks.
+*/
+
+#callouts {
+    
+}
+
+#callouts block {
+    background-color: grey;
+    float: left;
+    height: 155px;
+    width: 280px;
+}
+
+/* Position 1 */
+#block-block-5 {
+    
+}
+
+/* Position 2 */
+#block-block-6 {
+    
+}
+/* Position 3 */
+#block-block-7 {
+    
+}
+/* Position 4 */
+block-block-8 {
+    
+}

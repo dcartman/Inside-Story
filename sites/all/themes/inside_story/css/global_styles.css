@@ -1,3 +1,13 @@
+@import url('../capture_it_fonts/stylesheet.css');
+
+.capture_it {
+    font-family: 'CaptureitRegular';
+}
+
+.capture_it2 {
+    font-family: 'Captureit2Regular';
+}
+
 body {
 	background-color:black;
 	margin: 0 auto;
