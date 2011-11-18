@@ -1,4 +1,5 @@
 @import url('../capture_it_fonts/stylesheet.css');
+@import url('callouts.css');
 
 .capture_it {
     font-family: 'CaptureitRegular';

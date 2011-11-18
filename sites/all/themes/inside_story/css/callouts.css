@@ -10,27 +10,42 @@
     
 }
 
-#callouts block {
+#callouts .section {
+    padding:0px;
+}
+
+.region-callouts:after {
+    clear:both;
+    content: ".";
+    display: block;
+    height:0px;
+    visibility: hidden;
+}
+
+#callouts .block {
     background-color: grey;
     float: left;
     height: 155px;
+    margin-right: 11px;
     width: 280px;
 }
 
 /* Position 1 */
-#block-block-5 {
-    
+#callouts #block-block-5 {
+    margin-left: 0;
+    margin-right: 12px;
 }
 
 /* Position 2 */
-#block-block-6 {
+#callouts #block-block-6 {
     
 }
 /* Position 3 */
-#block-block-7 {
+#callouts #block-block-7 {
     
 }
 /* Position 4 */
-block-block-8 {
-    
+#callouts #block-block-8 {
+    margin-left: 1px;
+    margin-right: 0;
 }
