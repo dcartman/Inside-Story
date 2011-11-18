@@ -157,6 +157,12 @@
             </div>
         </div> <!-- /#main, /#main-wrapper -->
         
+        <?php if ($page['copyright']): ?>
+            <div id="copyright">
+                <?php print render($page['copyright']) ?>
+            </div>
+        <?php endif; ?>
+        
         <div id="footer">
         	<div class="section">
                 <?php print render($page['footer']); ?>

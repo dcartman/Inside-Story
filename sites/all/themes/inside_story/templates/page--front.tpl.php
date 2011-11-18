@@ -70,24 +70,24 @@
     <div id="page">
 
         <div id="header">        		
-        	<div class="section clearfix">
-        		
-				<?php if ($page['navigation']): ?>
-    				<div id="navigation">
-        				<div class="section clearfix">
-            				<?php print render($page['navigation']); ?>
-        				</div>
-    				</div>
-				<?php endif; ?>
-				
+            <div class="section clearfix">
+
+                <?php if ($page['navigation']): ?>
+                    <div id="navigation">
+                        <div class="section clearfix">
+                            <?php print render($page['navigation']); ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
                 <?php if ($site_name || $site_slogan): ?>
                     <div id="name-and-slogan">
                         <?php if ($site_name): ?>
                             <?php if ($title): ?>
                                 <div id="site-name">
-                                	<strong>
+                                    <strong>
                                         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-                                 	</strong>
+                                    </strong>
                                 </div>
                             <?php else: /* Use h1 when the content title is empty */ ?>
                                 <h1 id="site-name">
@@ -104,14 +104,14 @@
 
                 <?php print render($page['header']); ?>
             </div><!-- /.section -->                      
-        	
+
         </div> <!-- /#header -->
-        
+
         <?php if ($page['hero']): ?>
             <div id="hero">
-            	<div class="section">
-                	<?php print render($page['hero']) ?>
-            	</div>
+                <div class="section">
+                    <?php print render($page['hero']) ?>
+                </div>
             </div>
         <?php endif; ?>
 
@@ -122,17 +122,17 @@
         <?php print $messages; ?>
 
         <div id="main-wrapper">
-        	<div id="main" class="clearfix">
-        		<?php if(isset($page['header_image']) && isset($page['secondary_nav'])): ?>
-				<!--secondary menu block setup-->
-					<div id="secondary_navigation">			
-						<?php print render($page['secondary_nav']); ?>
-				    </div>
-				<?php endif; ?>
+            <div id="main" class="clearfix">
+                <?php if (isset($page['header_image']) && isset($page['secondary_nav'])): ?>
+                    <!--secondary menu block setup-->
+                    <div id="secondary_navigation">			
+                        <?php print render($page['secondary_nav']); ?>
+                    </div>
+                <?php endif; ?>
 
                 <?php if ($page['sidebar_first']): ?>
                     <div id="sidebar-first" class="column sidebar">
-                    	<div class="section">
+                        <div class="section">
                             <?php print render($page['sidebar_first']); ?>
                         </div>
                     </div> <!-- /.section, /#sidebar-first -->
@@ -156,7 +156,7 @@
 
                 <?php if ($page['sidebar_second']): ?>
                     <div id="sidebar-second" class="column sidebar">
-                    	<div class="section">
+                        <div class="section">
                             <?php print render($page['sidebar_second']); ?>
                         </div>
                     </div> <!-- /.section, /#sidebar-second -->
@@ -164,26 +164,30 @@
 
             </div>
         </div> <!-- /#main, /#main-wrapper -->
-        
+
         <?php if ($page['callouts']): ?>
             <div id="callouts">
-            	<div class="section">
-                    <?php print render($page['callouts']) ?>
-                </div>
+                <?php print render($page['callouts']) ?>
             </div>
         <?php endif; ?>
-        
+
+        <?php if ($page['copyright']): ?>
+            <div id="copyright">
+                <?php print render($page['copyright']) ?>
+            </div>
+        <?php endif; ?>
+
         <div id="footer">
-        	<div class="section">
+            <div class="section">
                 <?php print render($page['footer']); ?>
             </div>
         </div> <!-- /.section, /#footer -->
 
     </div>
 </div> <!-- /#page, /#page-wrapper -->
-<?php if(isset($page['header_image'])): ?>
-	<!--custom header image block setup-->
-	
-		<?php print render($page['header_image']); ?>
-	
+<?php if (isset($page['header_image'])): ?>
+    <!--custom header image block setup-->
+
+    <?php print render($page['header_image']); ?>
+
 <?php endif; ?>
