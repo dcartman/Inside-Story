@@ -20,14 +20,19 @@ function content_view_modes_theme() {
 function content_view_modes_entity_info_alter(&$entity_info) {
 
   //Not sure if it's still an issue, but a previous commenter noted that Media module only recognizes view modes with the prefix media_. Also, as you can see by the entity type 'file', this is for after the switch-to-file-entity patch.
-  //$entity_info['file']['view modes']['media_front_slide_show'] = array(
-   // 'label' => t('Front Slide Show'),
-   // 'custom settings' => TRUE,
-  //);
+  $entity_info['file']['view modes']['media_cast_profile'] = array(
+    'label' => t('Cast Profile'),
+    'custom settings' => TRUE,
+  );
   
   $entity_info['node']['view modes']['cast_profile'] = array(
   	'label' => t('Cast Profile'),
   	'custom settings' => TRUE
+  );
+  
+  $entity_info['file']['view modes']['media_filmmaker_profile'] = array(
+    'label' => t('Filmmaker Profile'),
+    'custom settings' => TRUE,
   );
   
   $entity_info['node']['view modes']['filmmaker_profile'] = array(
