@@ -93,13 +93,8 @@
         </div>
     <?php endif; ?>
 
-    <div class="content"<?php print $content_attributes; ?>>
+    <div class="cast-member content"<?php print $content_attributes; ?>>
         <?php
-        $new_body = "<span>";
-        $new_body .= wordwrap(strip_tags($body[0]['value']), 36, '</span><br /><span>');
-        $new_body .= "</span>";
-
-        $content['body'][0]['#markup'] = $new_body;
         // We hide the comments and links now so that we can render them later.
         hide($content['comments']);
         hide($content['links']);

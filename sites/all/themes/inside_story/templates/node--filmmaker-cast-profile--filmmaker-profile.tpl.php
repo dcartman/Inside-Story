@@ -79,8 +79,6 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-    <?php print $user_picture; ?>
-
     <?php print render($title_prefix); ?>
     <?php if (!$page): ?>
         <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
@@ -93,13 +91,8 @@
         </div>
     <?php endif; ?>
 
-    <div class="content"<?php print $content_attributes; ?>>
+    <div class="filmmaker-profile content"<?php print $content_attributes; ?>>
         <?php
-        $new_body = "<span>";
-        $new_body .= wordwrap(strip_tags($body[0]['value']), 36, '</span><br /><span>');
-        $new_body .= "</span>";
-
-        $content['body'][0]['#markup'] = $new_body;
         // We hide the comments and links now so that we can render them later.
         hide($content['comments']);
         hide($content['links']);
@@ -110,6 +103,6 @@
 
 <?php print render($content['links']); ?>
 
-    <?php print render($content['comments']); ?>
+<?php print render($content['comments']); ?>
 
 </div>
