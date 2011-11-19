@@ -22,6 +22,8 @@
 @import url('secondary-navigation.css');
 @import url('tabs.css');
 @import url('callouts.css');
+@import url('filmmaker-profile.css');
+@import url('cast-member-profile.css');
 
 .capture_it {
     font-family: 'CaptureitRegular';
