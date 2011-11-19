@@ -27,6 +27,7 @@
  */
 ?>
 <?php if ($content): ?>
+  <div class="footer-background" id="footer-background">&nbsp;</div>
   <div class="<?php print $classes; ?>">
     <?php print $content; ?>
   </div>
