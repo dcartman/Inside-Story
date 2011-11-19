@@ -1,7 +1,7 @@
 <?php
 function content_view_modes_help($path, $arg) {
     switch ($path) {
-    case "admin/help#media_view_modes":
+    case "admin/help#content_view_modes":
         return '<p>'. t("Creates Additional content view modes") .'</p>';
         break;
     }
@@ -24,7 +24,10 @@ function content_view_modes_entity_info_alter(&$entity_info) {
     'label' => t('Cast Profile'),
     'custom settings' => TRUE,
   );
-  
+  $entity_info['file']['view modes']['media_front_slide_show'] = array(
+    'label' => t('Front Slide Show'),
+    'custom settings' => TRUE
+  );
   $entity_info['node']['view modes']['cast_profile'] = array(
   	'label' => t('Cast Profile'),
   	'custom settings' => TRUE
