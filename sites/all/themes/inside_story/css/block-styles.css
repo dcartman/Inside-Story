@@ -1,0 +1,14 @@
+/* 
+    Document   : block-styles
+    Created on : Nov 19, 2011, 4:18:33 PM
+    Author     : danielcarter
+    Description:
+        These styles are for blocks that are insignicant in their style requirements
+*/
+
+#block-block-11 {
+    float: right;
+    margin-left: 50px;
+    width: 300px;
+}
+

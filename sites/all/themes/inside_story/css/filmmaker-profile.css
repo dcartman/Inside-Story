@@ -3,15 +3,39 @@
     Created on : Nov 19, 2011, 1:28:45 PM
     Author     : danielcarter
     Description:
-        Purpose of the stylesheet follows.
+        Filmmaker Profile Styles.
 */
 
-/* 
-   TODO customize this sample style
-   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
-*/
-
-root { 
-    display: block;
+.view-display-id-filmmaker_profiles_block .views-row {
+    margin-bottom: 60px;
 }
 
+.filmmaker-profile h2.profile-name {
+    font-size: 20px;
+    left: 10px;
+    letter-spacing: 3px;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    z-index: 10;
+}
+
+.filmmaker-profile .field-name-field-multiple-images {
+    display: block;
+    float: left;
+    margin-right: 61px;
+}
+
+.filmmaker-profile .field-name-field-film-role {
+    color: white;
+    float:right;
+    font-size: 20px;
+    padding-top:20px;
+    width: 539px;
+}
+
+.filmmaker-profile .field-name-body {
+    color: white;
+    float:right;
+    width: 539px;
+}
