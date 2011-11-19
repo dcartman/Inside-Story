@@ -114,17 +114,11 @@
                 </div>
             </div>
         <?php endif; ?>
-        
-        <?php if (isset($page['header_image']) && isset($page['secondary_nav'])): ?>
-            <!--secondary menu block setup-->
-            <div id="secondary_navigation">			
-                <?php print render($page['secondary_nav']); ?>
-            </div>
-        <?php endif; ?>
 
-        <?php print $messages; ?>
+        
 
         <div id="main-wrapper">
+            <?php print $messages; ?>
             <div id="main" class="clearfix">
 
 

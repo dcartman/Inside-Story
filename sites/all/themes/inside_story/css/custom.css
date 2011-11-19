@@ -47,6 +47,7 @@ body {
     background-color:black;
     color: rgb(153,153,153);
     font-family: Arial;
+    font-size: 14px;
     margin: 0 auto;
     top: 0;
 }
@@ -63,13 +64,18 @@ h1, h2, h3, h4 {
     padding: 10px;
 }
 
-.breadcrumb, .breadcrumb a {
+#main-wrapper .breadcrumb, 
+#main-wrapper .breadcrumb a,
+#main-wrapper .breadcrumb a:active,
+#main-wrapper .breadcrumb a:hover,
+#main-wrapper .breadcrumb a:visited {
+    color: white;
     font-family: Georgia, serif;
     font-size: 15px;
     font-style: italic;
 }
 
-.breadcrumb a.active-trail {
+#main-wrapper .breadcrumb a.current-page {
     font-size: 40px;
 }
 
@@ -87,6 +93,12 @@ h1, h2, h3, h4 {
     float: left;
     display: inline;
     position: relative;
+}
+
+/* MAIN WRAPPER */
+.not-front #main-wrapper {
+    margin: 0 auto;
+    width: 960px;
 }
 
 /* Content Region */
@@ -109,10 +121,6 @@ body.sidebar-second #content {
 body.two-sidebars #content {
     width: 300px;
     /* left: 20%; */
-}
-
-#content .section {
-    padding-left:25px;
 }
 
 /* Header Region */

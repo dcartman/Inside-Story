@@ -13,6 +13,7 @@
 .tabs {
     position:absolute;
     right: 0;
+    top: -10px;
     z-index: 10;
 }
 
@@ -20,7 +21,7 @@ ul.primary:before {
     background: transparent url(images/gear-select.png) no-repeat 2px 0;
     border: 1px solid transparent;
     content: ".";
-    display: block;
+    display: none;
     height: 18px;
     margin: 0;
     padding: 0 2px;
@@ -39,7 +40,7 @@ ul.primary {
 }
 
 ul.primary li {
-    display: block;
+    
 }
 
 ul.primary li a {

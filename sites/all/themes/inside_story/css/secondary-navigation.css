@@ -8,11 +8,7 @@
 
 /* Secondary Menu */
 #secondary_navigation .block-menu-block h2{
-	display: none;
-}
-
-#secondary_navigation {
-	margin-left: 15px;
+    display: none;
 }
 
 #secondary_navigation .block-menu-block ul{
@@ -22,14 +18,19 @@
 }
 
 #secondary_navigation .block-menu-block ul li{
-    height: 40px;
+    display: block;
+    float:left;
     list-style: none outside none;
-    width: 128px;    
     margin: 0 1px 0 0;
     padding: 0;
-    background-color:#999;
-    display: block;
-    float: left;
+}
+
+#secondary_navigation .block-menu-block ul li:after {
+    content: " / ";
+}
+
+#secondary_navigation .block-menu-block ul li:after {
+    content: "";
 }
 
 #secondary_navigation .block-menu-block ul li a{
