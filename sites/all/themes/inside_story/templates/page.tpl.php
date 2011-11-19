@@ -164,6 +164,7 @@
         <?php endif; ?>
         
         <div id="footer">
+            <div class="footer-background" id="footer-background"></div>
         	<div class="section">
                 <?php print render($page['footer']); ?>
             </div>

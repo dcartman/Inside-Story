@@ -1,0 +1,44 @@
+/* 
+    Document   : secondary-menu
+    Created on : Nov 18, 2011, 10:23:29 PM
+    Author     : danielcarter
+    Description:
+        Styles for the Secondary Menu
+*/
+
+/* Secondary Menu */
+#secondary_navigation .block-menu-block h2{
+	display: none;
+}
+
+#secondary_navigation {
+	margin-left: 15px;
+}
+
+#secondary_navigation .block-menu-block ul{
+    height: 40px;
+    list-style: none outside none;
+    padding: 0;
+}
+
+#secondary_navigation .block-menu-block ul li{
+    height: 40px;
+    list-style: none outside none;
+    width: 128px;    
+    margin: 0 1px 0 0;
+    padding: 0;
+    background-color:#999;
+    display: block;
+    float: left;
+}
+
+#secondary_navigation .block-menu-block ul li a{
+    color:white;
+    font-family: 'AlteHaasGroteskRegular', 'Helvitica';
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    display:block;
+}
+
