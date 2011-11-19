@@ -21,7 +21,7 @@
 }
 
 #navigation .block-menu-block h2{
-	display: none;
+    display: none;
 }
 
 #navigation div.contextual-links-wrapper {
@@ -45,23 +45,24 @@
 #navigation .region-navigation .block-menu-block ul li, 
 #block-system-main-menu ul li, 
 #block-menu-menu-secondary-links ul li{
-    height: 40px;
+    height: 41px;
     list-style: none outside none;
     width: 128px;    
     margin: 0 1px 0 0;
     padding: 0;
     background-color:black;
-     display: block;
+    display: block;
     float: left;
 }
 
 #navigation .region-navigation .block-menu-block ul li a, 
 #block-system-main-menu ul li a, 
 #block-menu-menu-secondary-links ul li a{
-	color:white;
-	font-size: 12px;
+    color:white;
+    font-family: 'AlteHaasGroteskRegular', 'Helvitica';
+    font-size: 8pt;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 8px 10px;
     text-transform: uppercase;
     display:block;
 }
