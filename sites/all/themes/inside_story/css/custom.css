@@ -15,11 +15,12 @@
  * instances due to a positioning bug.
 */
 
-@import url('./global_styles.css');
 @import url('../capture_it_fonts/stylesheet.css');
 @import url('../alte_haas_grotesk/stylesheet.css');
+@import url('./global_styles.css');
 @import url('primary-navigation.css');
 @import url('secondary-navigation.css');
+@import url('tabs.css');
 @import url('callouts.css');
 
 .capture_it {
@@ -64,6 +65,12 @@ h1, h2, h3, h4 {
 
 .breadcrumb, .breadcrumb a {
     font-family: Georgia, serif;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.breadcrumb a.active-trail {
+    font-size: 40px;
 }
 
 .clearfix:after {
@@ -72,12 +79,6 @@ h1, h2, h3, h4 {
     height: 0px;
     display:block;
     visibility: hidden;
-}
-
-#page, #navigation {
-    margin: 0 auto;
-    width: 900px;
-    z-index: 10;
 }
 
 #content,

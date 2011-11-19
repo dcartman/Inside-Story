@@ -114,21 +114,19 @@
                 </div>
             </div>
         <?php endif; ?>
-
-        <?php if ($breadcrumb): ?>
-            <?php //<div id="breadcrumb"><?php print $breadcrumb; </div>?>
+        
+        <?php if (isset($page['header_image']) && isset($page['secondary_nav'])): ?>
+            <!--secondary menu block setup-->
+            <div id="secondary_navigation">			
+                <?php print render($page['secondary_nav']); ?>
+            </div>
         <?php endif; ?>
 
         <?php print $messages; ?>
 
         <div id="main-wrapper">
             <div id="main" class="clearfix">
-                <?php if (isset($page['header_image']) && isset($page['secondary_nav'])): ?>
-                    <!--secondary menu block setup-->
-                    <div id="secondary_navigation">			
-                        <?php print render($page['secondary_nav']); ?>
-                    </div>
-                <?php endif; ?>
+
 
                 <?php if ($page['sidebar_first']): ?>
                     <div id="sidebar-first" class="column sidebar">

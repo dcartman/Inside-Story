@@ -1,0 +1,47 @@
+/* 
+    Document   : tabs.css
+    Created on : Nov 18, 2011, 11:01:31 PM
+    Author     : danielcarter
+    Description:
+        Styles the Action tabs.
+*/
+
+.front .tabs {
+    display: none;
+}
+
+.tabs {
+    position:absolute;
+    right: 0;
+    z-index: 10;
+}
+
+ul.primary:before {
+    background: transparent url(images/gear-select.png) no-repeat 2px 0;
+    border: 1px solid transparent;
+    content: ".";
+    display: block;
+    height: 18px;
+    margin: 0;
+    padding: 0 2px;
+    outline: none;
+    text-indent: 34px;
+    width: 28px;
+    overflow: hidden;
+    -khtml-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+ul.primary {
+    border-bottom: none;
+}
+
+ul.primary li {
+    display: block;
+}
+
+ul.primary li a {
+    
+}

@@ -1,58 +1,60 @@
 
 
 #page-wrapper{
-	background: #000 url("../images/background.jpg") no-repeat center top;
+    background: #000 url("../images/background.jpg") no-repeat center top;
 }
 
 
 #page{
-	width: 1155px;
-	min-height: 1185px;
-	background: white;
-	padding: 0;
-	background-color: black;
+    background: white;
+    background-color: black;
+    padding: 0;
+    margin: 0 auto;
+    min-height: 1185px;
+    width: 1155px;
+    z-index: 10;
 }
 
 #header {
-	background: #000 url("../images/hero_top.jpg") no-repeat center top;
-	height: 270px;	
+    background: #000 url("../images/hero_top.jpg") no-repeat center top;
+    height: 270px;	
 }
 
 #header .section{
-	padding: 0;
-	margin: 0;	
-	position:relative;
+    padding: 0;
+    margin: 0;	
+    position:relative;
 }
 
 #header .custom_header{
-	z-index:2; 
+    z-index:2; 
 }
 
 #name-and-slogan{
-	margin: 80px 0 0 0;
-	display:none;
-	z-index: 10;
+    margin: 80px 0 0 0;
+    display:none;
+    z-index: 10;
 }
 
 
 #hero{
-	height:670px;
-	width: 1155px;
-	background: url("../images/hero_bottom_play_words.jpg") no-repeat center top black;
-	position:relative;
+    height:670px;
+    width: 1155px;
+    background: url("../images/hero_bottom_play_words.jpg") no-repeat center top black;
+    position:relative;
 }
 
 
 #main-wrapper p, #main-wrapper h1, #main-wrapper h2, #main-wrapper h3{
-	color: white;
+    color: white;
 } 
 
 #main-wrapper a{ 
-	color: #F2A44B;
+    color: #F2A44B;
 } 
 #main-wrapper a:hover{
-	color:#ff7;
-	text-decoration:underline;
+    color:#ff7;
+    text-decoration:underline;
 }
 
 /* FOOTER */
@@ -65,16 +67,16 @@
 }
 
 #footer p, #footer h1, #footer h2, #footer h3, #footer span{
-	color: white;
+    color: white;
 }
 
 #footer a{
-	color: #F2A44B;
+    color: #F2A44B;
 }
 
 #footer a:hover{
-	color: #ff7;
-	text-decoration:underline;
+    color: #ff7;
+    text-decoration:underline;
 }
 
 #footer-background {
