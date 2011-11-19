@@ -1,5 +1,0 @@
-; $Id$
-name = "Content View Modes"
-description = "Create addition view modes for Content."
-core = 7.x
-package = View Modes
