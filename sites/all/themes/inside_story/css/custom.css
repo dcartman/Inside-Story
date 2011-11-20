@@ -48,7 +48,7 @@
 
 body {
     background-color:black;
-    color: rgb(153,153,153);
+    color: rgb(255,255,255);
     font-family: Arial;
     font-size: 14px;
     margin: 0 auto;
@@ -243,4 +243,10 @@ body.two-sidebars #sidebar-first {
 
 }
 
+#node-8 tbody {
+    border-top: none;
+}
 
+#node-8 .content {
+    margin-bottom: 173px;
+}

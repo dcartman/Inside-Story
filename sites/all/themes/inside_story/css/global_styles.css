@@ -6,13 +6,19 @@
 
 
 #page{
-    background: white;
-    background-color: black;
+    background: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 0;
     margin: 0 auto;
     min-height: 1185px;
     width: 1155px;
     z-index: 10;
+
+    /* Transparent Background For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+
+    /* Transparent Background For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
 
 #header {
