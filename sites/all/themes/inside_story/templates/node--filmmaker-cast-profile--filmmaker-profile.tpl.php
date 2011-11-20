@@ -81,7 +81,7 @@
 
     <?php print render($title_prefix); ?>
     <?php if (!$page): ?>
-        <h2 class="profile-name capture_it2"<?php print $title_attributes; ?>><?php print $title; ?></h2>
+        <h2 class="profile-name"<?php print $title_attributes; ?>><?php print $title; ?></h2>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
@@ -96,6 +96,8 @@
         // We hide the comments and links now so that we can render them later.
         hide($content['comments']);
         hide($content['links']);
+        
+        // $content['film_role'][0]['value'] = $film_role[0]['value'] . ", " . $title;
         print render($content);
         
         ?>
@@ -103,6 +105,6 @@
 
 <?php print render($content['links']); ?>
 
-<?php print render($content['comments']); ?>
+<?php print render($content['comments']); ?>      
 
 </div>

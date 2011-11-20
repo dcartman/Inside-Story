@@ -6,3 +6,58 @@
         Cast Member Profile Styles.
 */
 
+.view-display-id-cast_profiles_block .views-row {
+    float: left;
+    width: 300px;
+}
+
+.view-display-id-cast_profiles_block .views-row-1,
+.view-display-id-cast_profiles_block .views-row-2,
+.view-display-id-cast_profiles_block .views-row-4,
+.view-display-id-cast_profiles_block .views-row-5,
+.view-display-id-cast_profiles_block .views-row-7,
+.view-display-id-cast_profiles_block .views-row-9 {
+    margin-right: 20px;
+}
+
+.view-display-id-cast_profiles_block .view-content:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.cast-member-profile h2.profile-name {
+    font-family: 'Captureit2Regular';
+    font-size: 20px;
+    left: 0px;
+    margin: 0;
+    position: absolute;
+    right: 25px;
+    text-align: right;
+    top: 132px;
+    width: 275px;
+    z-index: 10;
+}
+
+.cast-member-profile h2.profile-name a {
+    color: white;
+}
+
+.cast-member-profile .field-name-field-multiple-images {
+    display: block;
+    margin-bottom: 60px;
+}
+
+.cast-member-profile .field-name-field-film-role {
+    color: white;
+    font-family: 'Captureit2Regular';
+    font-size: 40px;
+    left: 25px;
+    position: absolute;
+    right: 0px;
+    top: 90px;
+    text-align: left;
+    z-index: 10;
+}

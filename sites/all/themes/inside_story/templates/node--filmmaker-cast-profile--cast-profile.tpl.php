@@ -83,7 +83,7 @@
 
     <?php print render($title_prefix); ?>
     <?php if (!$page): ?>
-        <h2 class="profile-name capture_it2"<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+        <h2 class="profile-name"<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
@@ -99,7 +99,6 @@
         hide($content['comments']);
         hide($content['links']);
         
-        $content['role'][0]['value'] = $role[0]['value'] . ", " . $title;
         print render($content);
         
         ?>

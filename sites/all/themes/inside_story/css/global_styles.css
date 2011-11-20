@@ -49,10 +49,10 @@
     color: white;
 } 
 
-#main-wrapper a{ 
+.content a{ 
     color: #F2A44B;
 } 
-#main-wrapper a:hover{
+.content a:hover{
     color:#ff7;
     text-decoration:underline;
 }
