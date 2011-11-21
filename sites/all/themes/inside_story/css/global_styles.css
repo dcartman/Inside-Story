@@ -46,7 +46,7 @@
 #hero{
     height:670px;
     width: 1155px;
-    background: url("../images/hero_bottom_play_words.jpg") no-repeat center top black;
+    background: url("../images/hero_no_play.jpg") no-repeat center top black;
     position:relative;
 }
 
