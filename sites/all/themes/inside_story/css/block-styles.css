@@ -15,7 +15,10 @@
 
 /* Partners */
 #block-block-12 {
+    font-size: 20px;
+    font-weight: bold;
     height: 250px;
+    margin-bottom: 40px;
 }
 
 #partner-logos img {
