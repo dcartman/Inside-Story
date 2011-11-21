@@ -6,9 +6,19 @@
         These styles are for blocks that are insignicant in their style requirements
 */
 
+/* Synopsis */
 #block-block-11 {
     float: right;
     margin-left: 50px;
     width: 300px;
 }
 
+/* Partners */
+#block-block-12 {
+    height: 250px;
+}
+
+#partner-logos img {
+    display: block;
+    float: left;
+}
