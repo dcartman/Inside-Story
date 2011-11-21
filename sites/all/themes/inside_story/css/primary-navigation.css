@@ -12,7 +12,7 @@
     position:relative;
     top: 35px;
     height: 40px;
-    width: 960px;
+    width: 995px; /*was 960px*/
     z-index: 10;
 }
 
@@ -32,7 +32,7 @@
     height: 40px;
     list-style: none outside none;
     list-style-image: none;
-    margin: 0 1em;
+    margin: 0 0 0 1em;
     padding: 0;
 }
 
@@ -45,6 +45,10 @@
     background-color:black;
     display: block;
     float: left;
+}
+
+#navigation .region-navigation .block-menu-block ul li.last {
+	margin: 0;
 }
 
 #navigation .region-navigation .block-menu-block ul li a {
@@ -63,4 +67,13 @@
 
 #navigation .region-navigation .block-menu-block ul li.active-trail a {
     color: black;
+}
+
+#navigation div.block.contextual-links-region{
+	float:left;	
+}
+
+#navigation div.block.contextual-links-region div.content p {
+	margin: 0;
+	padding: 0;
 }
