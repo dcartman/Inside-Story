@@ -1,0 +1,34 @@
+/* 
+    Document   : pages.css
+    Created on : Nov 20, 2011, 11:23:35 PM
+    Author     : danielcarter
+    Description:
+        Misc styles for basic pages that insignificant enough to not warrant a 
+        stylesheet of there own.
+*/
+
+/* Partners */
+#node-10 {
+    
+}
+
+#node-10 .content {
+    margin-bottom: 40px;
+}
+
+#node-10 .content table.partners-listing {
+    
+}
+
+#node-10 .content table.partners-listing tbody {
+    border-top: none;
+}
+
+#node-10 .content table.partners-listing td {
+    width:420px;
+}
+
+#node-10 .content table.partners-listing .table-title {
+    font-size: 18px;
+    font-weight: bold;
+}
