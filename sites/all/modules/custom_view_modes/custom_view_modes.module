@@ -13,7 +13,4 @@ function custom_view_modes_help($path, $arg) {
 function custom_view_modes_preprocess_node(&$vars) {
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
     
-    //if($vars['view_mode'] == 'another_teaser') {
-      //  $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__another_teaser';
-    //}
 }
