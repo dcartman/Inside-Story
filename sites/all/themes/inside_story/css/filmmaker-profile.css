@@ -27,12 +27,17 @@
     margin-right: 61px;
 }
 
-.filmmaker-profile .field-name-field-film-role {
+.filmmaker-profile .role-and-title {
     color: white;
     float:right;
     font-size: 20px;
     padding-top:20px;
     width: 539px;
+}
+
+.filmmaker-profile .field-name-field-film-role,
+.filmmaker-profile .field.node-title {
+    float: left;
 }
 
 .filmmaker-profile .field-name-body {

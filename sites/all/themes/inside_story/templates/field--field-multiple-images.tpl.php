@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file field.tpl.php
  * Default template implementation to display the value of a field.
@@ -42,15 +41,15 @@
  * @see theme_field()
  */
 ?>
-<?php $teaserModes = Array('cast-profile', 'film-maker-profile', 'filmmaker-profile', 'teaser') ?>
+<?php $teaserMode = array_search($element['#view_mode'], Array('cast-profile', 'film-maker-profile', 'filmmaker-profile', 'teaser')) ?>
 <span class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php if (!$label_hidden) : ?>
-    <span class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</span>
-  <?php endif; ?>
-  <span class="field-items"<?php print $content_attributes; ?>>
-    <?php foreach ($items as $delta => $item) : ?>
-      <span class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></span>
-      <?php if(array_search($element['#view_mode'], $teaserModes) !== false) break; ?>
-    <?php endforeach; ?>
-  </span>
+    <?php if (!$label_hidden) : ?>
+        <span class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</span>
+    <?php endif; ?>
+    <span class="field-items"<?php print $content_attributes; ?>>
+        <?php foreach ($items as $delta => $item) : ?>
+            <span class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></span>
+            <?php if ($teaserMode !== false) break; ?>
+        <?php endforeach; ?>
+    </span>
 </span>

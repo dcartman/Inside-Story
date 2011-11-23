@@ -96,14 +96,22 @@
         // We hide the comments and links now so that we can render them later.
         hide($content['comments']);
         hide($content['links']);
+        hide($content['field_film_role']);
         
-        // $content['film_role'][0]['value'] = $film_role[0]['value'] . ", " . $title;
+        
+        ?>
+        <div class="role-and-title" >
+            <?php print render($content['field_film_role']); ?>
+            <div class="field node-title">, <?php print $title; ?></div>
+        </div>    
+        <?php
         print render($content);
         
         ?>
     </div>
 
 <?php print render($content['links']); ?>
+        
 
 <?php print render($content['comments']); ?>      
 

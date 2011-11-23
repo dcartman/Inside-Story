@@ -6,6 +6,77 @@
         Purpose of the stylesheet follows.
 */
 
+/* Drupal Overlay */
 .overlay ul.secondary {
     margin-top: 0px;
+}
+
+/* ChumpNugget Modal */
+
+.modal-dialog-box {
+    background: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    display:none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 400;
+
+    /* Transparent Background For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA000000, endColorstr=#AA000000);
+
+    /* Transparent Background For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA000000, endColorstr=#AA000000)";
+}
+
+.modal-dialog-box .box-container {
+    margin: 0 auto;
+    top: 100px;
+    width: 800px;
+}
+
+.modal-dialog-box .modal-content {
+    background: white;
+    color: black;
+    min-height: 300px;
+}
+
+.modal-dialog-box .close.button {
+    background-color: #ffcc00;
+    content: 'X';
+    color: black;
+    height: 40px;
+    left: auto;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    width: 40px;
+    z-index: 500;
+}
+
+.modal-dialog-box .modal-content .field-name-field-multiple-images {
+    display: block;
+    height: 300px;
+}
+
+.modal-dialog-box .modal-content .field-name-field-film-role {
+    color: white;
+    font-size: 80px;
+    font-family: Captureit2Regular;
+    left: 38px;
+    position: absolute;
+    top: 225px;
+}
+
+.modal-dialog-box .modal-content .field-name-body {
+    font-size: 15px;
+    margin: 38px 38px 0 38px;
+    padding-bottom: 38px;
+}
+.modal-dialog-box .modal-content .field-name-title {
+    margin-left: 38px;
+    font-family: Captureit2Regular;
+    font-size: 40px;
 }
