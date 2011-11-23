@@ -20,4 +20,19 @@ function inside_story_breadcrumb($variables) {
     }
 }
 
+function inside_story_phptemplate_variables($hook, $vars) {
+  switch ($hook) {
+    case 'page':
+      // If the page was requested with the jQuery ajax functionalities, an HTTP header (X-Requested-With: XMLHttpRequest) 
+      // will be sent to the server, making it possible to identify if we should serve the content as JSON
+      if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && 'xmlhttprequest' == strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+          // Now that we know that the page was requested via remote scripting (AJAX) we can serve the content as JSON
+          // by telling Drupal to use a different template for the page (in this case page-json.tpl.php)
+          $vars['template_files'] = is_array($vars['template_files']) ? $vars['template_files'] : array();
+          $vars['template_files'][] = 'page-json';
+      }
+      break;
+  }
+}
+
 ?>

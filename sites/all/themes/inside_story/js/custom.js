@@ -2,7 +2,8 @@
     $(document).ready(function() {
         $('.modal-link').each(function(i,e) {
             ActivateModal.processModal(e, { 
-                "selector": ".modal-dialog-box"
+                "selector": ".modal-dialog-box",
+                "path_to_theme":'/sites/all/themes/inside_story'
             });
         }) 
     });
@@ -28,7 +29,7 @@ function ActivateModal(ele, h) {
     
     jQuery(this.element).addClass('modal-link');
     
-    this.url = jQuery(this.element).find('h2 a').attr('href') + "/rss.xml";
+    this.url = jQuery(this.element).find('h2 a').attr('href') + "/feed";
     
     this.modal = jQuery(this.selector);
     
@@ -52,6 +53,7 @@ ActivateModal.prototype.loadData = function(event) {
     jQuery.ajax({
         url: me.url,
         context: me,
+        dataType: 'html',
         success: me.processData,
         error: me.showError
     })    
@@ -95,13 +97,21 @@ ActivateModal.prototype.removeDocumentListeners = function() {
     jQuery(document).unbind("click");
 }
 
+ActivateModal.prototype.makeImage = function(role) {
+    return "<img src='"+ this.path_to_theme +"/images/text/"+ role.toLowerCase() +".png' />";
+}
+
 ActivateModal.prototype.processData = function(data, textStatus, jqXHR) {
     console.log(data);
     console.log(textStatus);
     console.log(jqXHR);
     var title = jQuery(data).find('item title').first().text();
+    
     this.modalContent.html(jQuery(data).find('item description').first().text());
-    this.modalContent.find('.field-name-field-film-role').after("<div class='field-name-title'>"+title+"</div>");
+    
+    var role = this.modalContent.find('.field-name-field-film-role').first().text();
+    
+    this.modalContent.find('.field-name-field-film-role').after("<div class='field-name-title'><span class='title-text'>"+title+"</span><span class='title-image'>"+ this.makeImage(role) +"</span></div>");
 }
 
 ActivateModal.prototype.showError = function(jqXHR, textStatus, errorThrown) {

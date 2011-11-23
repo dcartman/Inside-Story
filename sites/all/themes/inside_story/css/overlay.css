@@ -19,6 +19,7 @@
     bottom: 0;
     display:none;
     left: 0;
+    overflow: scroll;
     position: fixed;
     right: 0;
     top: 0;
@@ -67,6 +68,7 @@
 
 .modal-dialog-box .modal-content .field-name-field-film-role {
     color: white;
+    display: none;
     font-size: 80px;
     font-family: Captureit2Regular;
     left: 38px;
@@ -83,4 +85,9 @@
     margin-left: 38px;
     font-family: Captureit2Regular;
     font-size: 40px;
+    margin-top: -70px;
+}
+
+.modal-dialog-box .modal-content .field-name-title .title-text {
+    display: none;
 }
