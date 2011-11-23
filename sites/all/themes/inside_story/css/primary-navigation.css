@@ -20,6 +20,10 @@
     padding: 10px 10px 0px 10px;
 }
 
+#navigation .block-menu-block {
+    float: left;
+}
+
 #navigation .block-menu-block h2{
     display: none;
 }
