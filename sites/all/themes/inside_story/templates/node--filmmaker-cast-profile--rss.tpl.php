@@ -102,10 +102,12 @@
       hide($content['field_multiple_images']);
       hide($content['field_film_role']);
       
+      $title_role_image = theme('image', array('path' => path_to_theme() . '/images/text/' . $field_film_role[0]['value'] . '.png'));
+      
       print render($content['field_multiple_images']);
       print render($content['field_film_role']);
     ?>
-      <div class="profile-name"><?php print $title; ?></div>  
+      <div class="profile-name"><span clas="title-text"><?php print $title; ?></span><span class="title-image"><?php print $title_role_image; ?></span></div> "
     <?php
       print render($content);
     ?>

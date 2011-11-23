@@ -41,7 +41,7 @@
  * @see theme_field()
  */
 ?>
-<?php $teaserMode = array_search($element['#view_mode'], Array('cast-profile', 'film-maker-profile', 'filmmaker-profile', 'teaser')) ?>
+<?php $teaserMode = array_search($element['#view_mode'], Array('cast-profile', 'film-maker-profile', 'filmmaker-profile', 'teaser', 'rss')) ?>
 <span class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <?php if (!$label_hidden) : ?>
         <span class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</span>

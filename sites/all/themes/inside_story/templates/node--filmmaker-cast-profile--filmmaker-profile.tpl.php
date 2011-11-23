@@ -105,6 +105,7 @@
             <div class="field node-title">, <?php print $title; ?></div>
         </div>    
         <?php
+        
         print render($content);
         
         ?>

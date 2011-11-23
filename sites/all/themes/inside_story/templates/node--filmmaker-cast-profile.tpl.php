@@ -78,6 +78,7 @@
  * @see template_process()
  */
 ?>
+
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php print $user_picture; ?>
@@ -105,7 +106,7 @@
       print render($content['field_multiple_images']);
       print render($content['field_film_role']);
     ?>
-      <div class="profile-name"><?php print $title; ?></div>  
+      <div class="profile-name biography-view"><?php print $title; ?></div>  
     <?php
       print render($content);
     ?>

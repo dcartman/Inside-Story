@@ -43,6 +43,10 @@
     min-height: 300px;
 }
 
+#block-block-14 .modal-dialog-box .modal-content p {
+    color: black;
+}
+
 .modal-dialog-box .close.button {
     background-color: #ffcc00;
     content: 'X';

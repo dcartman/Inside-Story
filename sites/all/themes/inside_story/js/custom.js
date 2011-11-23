@@ -109,3 +109,5 @@ ActivateModal.prototype.showError = function(jqXHR, textStatus, errorThrown) {
     console.log(textStatus);
     console.log(jqXHR);
 }
+
+
