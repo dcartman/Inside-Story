@@ -18,7 +18,7 @@
 }
 
 ul.primary:before {
-    background: transparent url(images/gear-select.png) no-repeat 2px 0;
+    background: transparent url(/modules/contextual/images/gear-select.png) no-repeat 2px 0;
     border: 1px solid transparent;
     content: ".";
     display: none;

@@ -12,6 +12,9 @@
 }
 
 /* ChumpNugget Modal */
+.modal-link {
+    cursor: pointer;
+}
 
 .modal-dialog-box {
     background: rgb(0,0,0);
@@ -23,7 +26,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 400;
+    z-index: 1000;
 
     /* Transparent Background For IE 5.5 - 7*/
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA000000, endColorstr=#AA000000);
@@ -33,6 +36,7 @@
 }
 
 .modal-dialog-box .box-container {
+    display:none;
     margin: 0 auto;
     top: 100px;
     width: 800px;
@@ -49,9 +53,10 @@
 }
 
 .modal-dialog-box .close.button {
-    background-color: #ffcc00;
+    background: #ffcc00 url('../images/controls/close-button.png') no-repeat 50% 50%;
     content: 'X';
     color: black;
+    cursor: pointer;
     height: 40px;
     left: auto;
     position: absolute;

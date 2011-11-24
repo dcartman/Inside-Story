@@ -70,6 +70,13 @@
     <div id="page">
 
         <div id="header">
+            
+            <?php if ($page['header_image']): ?>
+            <div id="header-image">
+                <?php print render($page['header_image']); ?>
+            </div>
+            <?php endif; ?>
+            
             <div class="section clearfix">
                 <?php if ($page['navigation']): ?>
                     <div id="navigation">
@@ -85,12 +92,12 @@
                             <?php if ($title): ?>
                                 <div id="site-name">
                                     <strong>
-                                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span class="site-name-text"><?php print $site_name; ?></span></a>
                                     </strong>
                                 </div>
                             <?php else: /* Use h1 when the content title is empty */ ?>
                                 <h1 id="site-name">
-                                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span class="site-name-text"><?php print $site_name; ?></span></a>
                                 </h1>
                             <?php endif; ?>
                         <?php endif; ?>

@@ -2,13 +2,63 @@
     $(document).ready(function() {
         $('.modal-link').each(function(i,e) {
             ActivateModal.processModal(e, { 
+                "urlModifier": "/feed",
                 "selector": ".modal-dialog-box",
-                "path_to_theme":'/sites/all/themes/inside_story'
+                "path_to_theme":'/sites/all/themes/inside_story',
+                "callback": function(data,t,XHR) {
+                    var me = this,
+                        title = "<span class='title-text'>"+ jQuery(data).find('item title').first().text() +"</span>",
+                        content = jQuery(data).find('item description').first().text(),
+                        role = jQuery(content).filter('.field-name-field-film-role').first().text(),
+                        image = "<span class='title-image'>"+ this.makeImage(role) +"</span>";
+    
+                    this.modalContent.html(content);
+                    this.modalContent.ready(function() {
+                        me.openContent();
+                    });
+    
+                    this.modalContent.find('.field-name-field-film-role').after("<div class='field-name-title'>"+ title + image +"</div>");
+                }
+            });
+        }) 
+    });
+    
+    $(document).ready(function() {
+        $('.node-slideshow-image').each(function(i,e) {
+            ActivateModal.processModal(e, { 
+                "selector": ".modal-dialog-box",
+                "path_to_theme":'/sites/all/themes/inside_story',
+                "callback": function(data,t,XHR) {
+                    var me = this,
+                        content = jQuery(data).find('#content').first();
+                    
+                    this.modalContent.ready(function() {
+                        me.openContent();
+                    });
+                    this.modalContent.html(content);
+                    
+                }
             });
         }) 
     });
     
 })(jQuery)
+/*
+jQuery.ajax({ 
+    "url":"?q=views/ajax", 
+    "data": {
+        "view_name":"behind_scenes_slideshow_view",
+        "view_display_id":"behind_the_scenes_slideshow_block",
+        "view_args": "",
+        "view_path":node/14,
+        "view_base_path":null,
+        "view_dom_id":2,
+        "pager_element":0,
+        "page":1
+    } 
+});
+ */
+
 
 /**
  * Modal for displaying Ajaxy content
@@ -26,12 +76,17 @@ function ActivateModal(ele, h) {
     
     this.element = ele;
     this.element.object = this;
-    
     jQuery(this.element).addClass('modal-link');
     
-    this.url = jQuery(this.element).find('h2 a').attr('href') + "/feed";
+    this.callback = this.callback || function() {};
+    this.urlModifier = this.urlModifier || "";
+    
+    
+    this.url = jQuery(this.element).find('h2 a').attr('href') + this.urlModifier;
     
     this.modal = jQuery(this.selector);
+
+    this.container = this.modal.find('.box-container');
     
     this.closeButton = this.modal.find('.close.button');
     
@@ -62,15 +117,21 @@ ActivateModal.prototype.loadData = function(event) {
 }
 
 ActivateModal.prototype.openModal = function(content) {
-    this.modalContent.html(content);
-    this.modal.show();
+    this.modal.fadeIn(300);
     // this.addDocumentListeners();
 }
 
 ActivateModal.prototype.closeModal = function() {
-    // this.removeDocumentListeners();
-    this.modal.hide();
-    this.modalContent.html("");
+    this.modal.fadeOut(300);
+}
+
+ActivateModal.prototype.openContent = function(content) {
+    this.container.fadeIn(300);
+}
+
+ActivateModal.prototype.closeContent = function() {
+    this.container.fadeOut(300);
+    this.closeModal();
 }
 
 ActivateModal.prototype.setListeners = function() {
@@ -80,7 +141,9 @@ ActivateModal.prototype.setListeners = function() {
         e.preventDefault();
         return false; 
     });
-    jQuery(this.closeButton).click(function() { me.closeModal(); })
+    jQuery(this.closeButton).click(function() {
+        me.closeContent();
+    })
 }
 
 ActivateModal.prototype.addDocumentListeners = function() {
@@ -102,16 +165,8 @@ ActivateModal.prototype.makeImage = function(role) {
 }
 
 ActivateModal.prototype.processData = function(data, textStatus, jqXHR) {
-    console.log(data);
-    console.log(textStatus);
-    console.log(jqXHR);
-    var title = jQuery(data).find('item title').first().text();
-    
-    this.modalContent.html(jQuery(data).find('item description').first().text());
-    
-    var role = this.modalContent.find('.field-name-field-film-role').first().text();
-    
-    this.modalContent.find('.field-name-field-film-role').after("<div class='field-name-title'><span class='title-text'>"+title+"</span><span class='title-image'>"+ this.makeImage(role) +"</span></div>");
+    var me = this;
+    if(typeof(this.callback) == "function") this.callback.call(this, data, textStatus, jqXHR);
 }
 
 ActivateModal.prototype.showError = function(jqXHR, textStatus, errorThrown) {

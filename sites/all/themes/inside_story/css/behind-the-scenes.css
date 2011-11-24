@@ -6,11 +6,20 @@
         All the styles you ever wanted for Behind the Scenes
 */
 
+/* Behind the scenes View blocks */
+.page-node-14 .block h2 {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
 
 /* Image teasers */
 .view-display-id-behind_scenes_teaser_block .views-view-grid {
     border-collapse:separate;
-    border-spacing:6px 40px;
+    border-spacing:8px 40px;
+    left: -8px;
+    top: -40px;
 }
 
 .view-display-id-behind_scenes_teaser_block .node-slideshow-image {
@@ -33,12 +42,6 @@
 
 .view-display-id-behind_scenes_teaser_block .node-slideshow-image h2 a {
     color:white;
-}
-
-.view-display-id-behind_scenes_teaser_block .node-slideshow-image h2:after {
-    content: url('../images/follow-me-arrow.png');
-    position: relative;
-    top: 5px;
 }
 
 .view-display-id-behind_scenes_teaser_block .node-slideshow-image .content {

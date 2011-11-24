@@ -11,6 +11,7 @@
 }
 
 .filmmaker-profile h2.profile-name {
+    display: none;
     font-family: 'Captureit2Regular';
     font-size: 20px;
     left: 10px;
@@ -21,7 +22,7 @@
     z-index: 10;
 }
 
-.filmmaker-profile .field-name-field-multiple-images {
+.filmmaker-profile .field-name-field-single-image {
     display: block;
     float: left;
     margin-right: 61px;

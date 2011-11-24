@@ -5,7 +5,7 @@ function inside_story_breadcrumb($variables) {
     if (!empty($breadcrumb)) {
         // Adding the title of the current page to the breadcrumb.
 
-        if (preg_match('/>' . drupal_get_title() . '</', $breadcrumb[count($breadcrumb) - 1])) {
+        if (preg_match('/>' . addcslashes(drupal_get_title(), "/") . '</', $breadcrumb[count($breadcrumb) - 1])) {
             array_pop($breadcrumb);
         }
         $breadcrumb[] = "<a href='#content' class='current-page'>" . drupal_get_title() . "</a>";

@@ -134,18 +134,26 @@ body.two-sidebars #content {
     padding:8px 10px 10px 10px;
 }
 
+#name-and-slogan{
+    left: 100px;
+    position: absolute;
+    top: 230px;
+    z-index: 10;
+}
+
 #site-name {
 
     font-size: 120px;
     line-height: 90px;
 }
 
+#site-name .site-name-text, #site-slogan {
+    visibility: hidden;
+}
+
 .not-front #site-name {
-
-    font-size: 60px;
+    font-size: 90px;
     line-height: 50px;
-
-
 }
 
 #site-name a, #site-name a:visited, #site-name a:hover {
