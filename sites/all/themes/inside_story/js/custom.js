@@ -1,16 +1,18 @@
 (function($) {
+    // cast profiles
     $(document).ready(function() {
         $('.modal-link').each(function(i,e) {
             ActivateModal.processModal(e, { 
                 "urlModifier": "/feed",
                 "selector": ".modal-dialog-box",
                 "path_to_theme":'/sites/all/themes/inside_story',
+                "dataType": "XML",
                 "callback": function(data,t,XHR) {
                     var me = this,
-                        title = "<span class='title-text'>"+ jQuery(data).find('item title').first().text() +"</span>",
-                        content = jQuery(data).find('item description').first().text(),
-                        role = jQuery(content).filter('.field-name-field-film-role').first().text(),
-                        image = "<span class='title-image'>"+ this.makeImage(role) +"</span>";
+                    title = "<span class='title-text'>"+ jQuery(data).find('item title').first().text() +"</span>",
+                    content = jQuery(data).find('item description').first().text(),
+                    role = jQuery(content).filter('.field-name-field-film-role').first().text(),
+                    image = "<span class='title-image'>"+ this.makeImage(role) +"</span>";
     
                     this.modalContent.html(content);
                     this.modalContent.ready(function() {
@@ -22,20 +24,33 @@
             });
         }) 
     });
-    
+    // slideshow
     $(document).ready(function() {
         $('.node-slideshow-image').each(function(i,e) {
             ActivateModal.processModal(e, { 
                 "selector": ".modal-dialog-box",
                 "path_to_theme":'/sites/all/themes/inside_story',
+                "url":"?q=behind-the-scenes/images.xml", 
+                "dataType": "XML",
                 "callback": function(data,t,XHR) {
-                    var me = this,
-                        content = jQuery(data).find('#content').first();
+                    var me = this;
+                    jQuery(data).find('item').each(function(i,e) {
+                        //get the title
+                        var title = "<div class='title-text'>"+ jQuery(e).find('title').text() +"</div>",
+                        
+                        //get the description
+                            content = jQuery(e).find('description').first().text(),
+                        // put them in a block
+                            slide = "<div class='slide'>"+ title + content +"</div>";
+                        // append to the modalContent
+                            me.modalContent.append(slide);
+                        
+                    });
                     
                     this.modalContent.ready(function() {
                         me.openContent();
                     });
-                    this.modalContent.html(content);
+                    
                     
                 }
             });
@@ -82,7 +97,9 @@ function ActivateModal(ele, h) {
     this.urlModifier = this.urlModifier || "";
     
     
-    this.url = jQuery(this.element).find('h2 a').attr('href') + this.urlModifier;
+    this.url = this.url || jQuery(this.element).find('h2 a').attr('href') + this.urlModifier;
+    this.data = this.data || ""
+    this.dataType = this.dataType || "html"
     
     this.modal = jQuery(this.selector);
 
@@ -108,7 +125,8 @@ ActivateModal.prototype.loadData = function(event) {
     jQuery.ajax({
         url: me.url,
         context: me,
-        dataType: 'html',
+        data: me.data,
+        dataType: me.dataType,
         success: me.processData,
         error: me.showError
     })    
@@ -118,7 +136,7 @@ ActivateModal.prototype.loadData = function(event) {
 
 ActivateModal.prototype.openModal = function(content) {
     this.modal.fadeIn(300);
-    // this.addDocumentListeners();
+// this.addDocumentListeners();
 }
 
 ActivateModal.prototype.closeModal = function() {

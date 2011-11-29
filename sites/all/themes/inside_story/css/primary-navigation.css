@@ -73,11 +73,11 @@
     color: black;
 }
 
-#navigation div.block.contextual-links-region{
+#navigation .region-navigation #block-block-13{
 	float:left;	
 }
 
-#navigation div.block.contextual-links-region div.content p {
+#navigation div.block div.content p {
 	margin: 0;
 	padding: 0;
 }

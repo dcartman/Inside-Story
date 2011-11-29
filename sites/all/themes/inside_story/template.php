@@ -35,4 +35,5 @@ function inside_story_phptemplate_variables($hook, $vars) {
   }
 }
 
+
 ?>
