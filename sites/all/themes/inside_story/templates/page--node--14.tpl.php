@@ -180,7 +180,7 @@
             </div>
         </div> <!-- /.section, /#footer -->
         <div class="javascript" style="display: none;">
-            <?php drupal_add_js(drupal_get_path('theme', 'inside_story'). '/js/jquery.cycle.lite.js'); ?>
+            <?php drupal_add_js(drupal_get_path('theme', 'inside_story'). '/js/jquery.cycle.all.js'); ?>
             <?php drupal_add_js(drupal_get_path('theme', 'inside_story'). '/js/jquery.easing.1.3.js'); ?>
         </div>
 

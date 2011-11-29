@@ -29,6 +29,7 @@
 @import url('cast-member-profile.css');
 @import url('behind-the-scenes.css');
 @import url('blog.css');
+@import url('bts-slideshow.css');
 
 .capture_it {
     font-family: 'CaptureitRegular';
@@ -137,6 +138,7 @@ body.two-sidebars #content {
 }
 
 #name-and-slogan{
+    display:none;
     left: 100px;
     position: absolute;
     top: 230px;

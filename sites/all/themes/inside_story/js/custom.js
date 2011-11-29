@@ -32,25 +32,50 @@
                 "path_to_theme":'/sites/all/themes/inside_story',
                 "url":"?q=behind-the-scenes/images.xml", 
                 "dataType": "XML",
+                "afterClose": function() {
+                    this.modalContent.cycle('destroy');
+                    this.container.find('.pager').html("");
+                },
                 "callback": function(data,t,XHR) {
-                    var me = this;
+                    var me = this
+                        StartingSlide = 0;
                     jQuery(data).find('item').each(function(i,e) {
-                        //get the title
+
                         var title = "<div class='title-text'>"+ jQuery(e).find('title').text() +"</div>",
-                        
-                        //get the description
                             content = jQuery(e).find('description').first().text(),
-                        // put them in a block
-                            slide = "<div class='slide'>"+ title + content +"</div>";
-                        // append to the modalContent
-                            me.modalContent.append(slide);
+                            slide = jQuery("<div class='slide'>"+ content +"</div>");
+                        
+                        slide.find('.field-name-body').before(title);
+                        
+                        if(jQuery(e).text().match(me.nodeHref)) StartingSlide = i;
+
+                        me.modalContent.append(slide);
                         
                     });
+                    
+                    this.modalContent
+                        .after('<div class="next-slide button">&nbsp;</div>')
+                        .after('<div class="prev-slide button">&nbsp;</div>')
+                        .after('<div class="pager clearfix"></div>');
+                    
+                    this.modalContent.cycle({ 
+                        containerResize: true,
+                        fx:    'fade', 
+                        next: this.container.find('.next-slide.button'),
+                        pager: this.container.find('.pager'),
+                        pause: true,
+                        pauseOnPagerHover: true,
+                        prev: this.container.find('.prev-slide.button'),
+                        speed:  2500,
+                        startingSlide: StartingSlide,
+                        timeout: 7000
+                    });
+                    
+                    this.modalContent.cycle('pause');
                     
                     this.modalContent.ready(function() {
                         me.openContent();
                     });
-                    
                     
                 }
             });
@@ -96,6 +121,8 @@ function ActivateModal(ele, h) {
     this.callback = this.callback || function() {};
     this.urlModifier = this.urlModifier || "";
     
+    this.nodeHref = this.getNodeHref();
+    this.nodeId = this.getNodeId();
     
     this.url = this.url || jQuery(this.element).find('h2 a').attr('href') + this.urlModifier;
     this.data = this.data || ""
@@ -150,6 +177,8 @@ ActivateModal.prototype.openContent = function(content) {
 ActivateModal.prototype.closeContent = function() {
     this.container.fadeOut(300);
     this.closeModal();
+    this.modalContent.html('');
+    if(typeof(this.afterClose) == "function") this.afterClose.call(this);
 }
 
 ActivateModal.prototype.setListeners = function() {
@@ -191,6 +220,20 @@ ActivateModal.prototype.showError = function(jqXHR, textStatus, errorThrown) {
     console.log(errorThrown);
     console.log(textStatus);
     console.log(jqXHR);
+}
+
+ActivateModal.prototype.getNodeId = function(href) {
+    var me = this,
+        href = href || this.nodeHref,
+        id = href.split('/').pop();
+    
+    return (id.match(/\d/g).length == id.length) ? id : null;
+}
+
+ActivateModal.prototype.getNodeHref = function() {
+    var me = this,
+        href = href = jQuery(this.element).find('h2 a').attr('href');
+        return href.split('=').pop();
 }
 
 

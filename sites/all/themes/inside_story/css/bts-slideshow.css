@@ -1,0 +1,40 @@
+/* 
+    Document   : bts-slideshow
+    Created on : Nov 29, 2011, 11:32:40 AM
+    Author     : danielcarter
+    Description:
+        Behind the Scenes Image slide Show
+*/
+
+.page-node-14 .modal-dialog-box .slide {
+
+}
+
+.page-node-14 .modal-dialog-box .slide .title-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 38px;
+}
+
+.page-node-14 .modal-dialog-box .slide .field-name-body {
+    margin: 10px 38px 10px 38px;
+}
+
+.page-node-14 .modal-dialog-box .pager {
+    position: relative;
+    text-align: center;
+    top: -30px;
+    z-index: 100;
+    font-size: 20px;
+}
+
+.page-node-14 #footer .modal-dialog-box .pager a {
+    color: black;
+    margin-right: 15px;
+}
+
+.page-node-14 #footer .modal-dialog-box .pager a.activeSlide {
+    color: #F2A44B;
+} 
+
+

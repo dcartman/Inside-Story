@@ -42,10 +42,26 @@
     width: 800px;
 }
 
+.page-node-14 .modal-dialog-box .box-container {
+    width: 890px;
+}
+
 .modal-dialog-box .modal-content {
     background: white;
     color: black;
     min-height: 300px;
+}
+
+.page-node-14 .modal-dialog-box .modal-content {
+    min-height: 620px;
+} 
+
+.modal-dialog-box .modal-content:after {
+    clear:both;
+    content: ".";
+    display: block;
+    height: 0px;
+    visibility: hidden;
 }
 
 #block-block-14 .modal-dialog-box .modal-content p {
@@ -64,6 +80,28 @@
     top: -10px;
     width: 40px;
     z-index: 500;
+}
+
+.modal-dialog-box .prev-slide.button {
+    background: #ffcc00 url('../images/controls/prev-arrow.png') no-repeat 50% 50%;
+    cursor: pointer;
+    height: 115px;
+    left: -30px;
+    position: absolute;
+    top: 40px;
+    width: 40px;
+    z-index: 100;
+}
+
+.modal-dialog-box .next-slide.button {
+    background: #ffcc00 url('../images/controls/next-arrow.png') no-repeat 50% 50%;
+    cursor: pointer;
+    height: 115px;
+    position: absolute;
+    right: -30px;
+    top: 40px;
+    width: 40px;
+    z-index: 100;
 }
 
 .modal-dialog-box .modal-content .field-name-field-multiple-images {
