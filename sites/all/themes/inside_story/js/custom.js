@@ -24,6 +24,29 @@
             });
         }) 
     });
+    // the science play-by-play
+    $(document).ready(function() {
+        $('.view-display-id-the_science_cast_previews_block .views-row .node').each(function(i,e) {
+            ActivateModal.processModal(e, { 
+                "urlModifier": "/feed",
+                "selector": ".modal-dialog-box",
+                "path_to_theme":'/sites/all/themes/inside_story',
+                "dataType": "XML",
+                "callback": function(data,t,XHR) {
+                    var me = this,
+                    title = "<span class='title-text'>"+ jQuery(data).find('item title').first().text() +"</span>",
+                    content = jQuery(data).find('item description').first().text();
+    
+                    this.modalContent.html(content);
+                    this.modalContent.ready(function() {
+                        me.openContent();
+                    });
+    
+                    this.modalContent.find('.field-name-field-film-role').after("<div class='field-name-title'>"+ title +"</div>");
+                }
+            });
+        }) 
+    });
     // slideshow
     $(document).ready(function() {
         $('.node-slideshow-image').each(function(i,e) {
@@ -45,7 +68,7 @@
                             content = jQuery(e).find('description').first().text(),
                             slide = jQuery("<div class='slide'>"+ content +"</div>");
                         
-                        slide.find('.field-name-body').before(title);
+                        // slide.find('.field-name-body').before(title);
                         
                         if(jQuery(e).text().match(me.nodeHref)) StartingSlide = i;
 
@@ -66,7 +89,7 @@
                         pause: true,
                         pauseOnPagerHover: true,
                         prev: this.container.find('.prev-slide.button'),
-                        speed:  2500,
+                        speed:  1000,
                         startingSlide: StartingSlide,
                         timeout: 7000
                     });

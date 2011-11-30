@@ -1,79 +1,100 @@
-body.sidebar-first #content div.node-teaser{
-	background: white;
-	margin-bottom: 50px;
-	padding: 0 40px 25px; 40px;
-	
+body.page-blog .action-links {
+    display:none;
 }
 
-body.sidebar-first #content div.node-teaser pre{
-	background: black;
-	border: 2px solid red;
-	padding: 10px;	
+body.sidebar-first #content div.node-teaser,
+body.sidebar-first #content div.node-blog {
+    background: white;
+    margin-bottom: 50px;
+    padding: 0 40px 25px 40px;
+
 }
 
-body.sidebar-first #content div.node-teaser p, body.sidebar-first #content div.node-teaser div.blog-meta, body.sidebar-first #content div.node-teaser div.blog-date {
-  color: black;
+body.sidebar-first #content div.node-teaser pre,
+body.sidebar-first #content div.node-blog pre{
+    background: black;
+    border: 2px solid red;
+    padding: 10px;	
+}
+
+body.sidebar-first #content div.node-teaser p, 
+body.sidebar-first #content div.node-teaser div.blog-meta, 
+body.sidebar-first #content div.node-teaser div.blog-date,
+body.sidebar-first #content div.node-blog p, 
+body.sidebar-first #content div.node-blog div.blog-meta, 
+body.sidebar-first #content div.node-blog div.blog-date{
+    color: black;
 }	
 
-
-
-body.sidebar-first #content div.node-teaser div.blog-date{
-	background-color: #ffcc00;
-	font-size: 20px;
-	line-height: 20px;
-	margin-left: 430px;
-	top: -20px;
-	height: 20px;
-	width: 135px;
-	padding: 10px 20px;
-	z-index: 200;
-	font-style: italic;
- 	text-align: center;
- 	font-family: "Georgia", serif; 	
+body.sidebar-first #content div.node-teaser div.blog-date,
+body.sidebar-first #content div.node-blog div.blog-date{
+    background-color: #ffcc00;
+    font-size: 20px;
+    line-height: 20px;
+    margin-left: 430px;
+    top: -20px;
+    height: 20px;
+    width: 135px;
+    padding: 10px 20px;
+    z-index: 200;
+    font-style: italic;
+    text-align: center;
+    font-family: "Georgia", serif; 	
 }
 
 hr.blog-yellow{
-	height: 10px;
-	color: #ffcc00;
-	background-color: #ffcc00;
-	border: 0;
-	
+    height: 10px;
+    color: #ffcc00;
+    background-color: #ffcc00;
+    border: 0;
+
 }
 
-body.sidebar-first #content div.node-teaser div.content{
-	border-top: 1px dotted black;
-	border-bottom: 1px dotted black;
-	padding: 10px 0;
-	margin-bottom: 20px;
+body.sidebar-first #content div.node-teaser div.content,
+body.sidebar-first #content div.node-blog div.content {
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+    padding: 10px 0;
+    margin-bottom: 20px;
 }
 
-body.sidebar-first #content div.node-teaser p{
-	font-family: "Georgia", serif;
-	color: black;
-	font-size: 15px;
-	line-height: 21px;
+body.sidebar-first #content div.node-teaser p,
+body.sidebar-first #content div.node-blog p {
+    font-family: "Georgia", serif;
+    color: black;
+    font-size: 15px;
+    line-height: 21px;
 }
 
-body.sidebar-first #content div.node-teaser h2{
-	font-family: "Georgia", serif;
-	color: black;
-	text-decoration: none;
-	font-style: italic;
-	font-weight: bold;
-	font-size: 40px;
-	margin: 20px 0;
+body.sidebar-first #content div.node-teaser h2,
+body.sidebar-first #content div.node-blog h2.node-title,
+body.sidebar-first #content div.node-blog h1.node-title {
+    font-family: "Georgia", serif;
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 20px 0;
 }
 
-body.sidebar-first #content div.node-teaser h2 a{
+body.sidebar-first #content div.node-teaser h2 a,
+body.sidebar-first #content div.node-blog h2.node-title a,
+body.sidebar-first #content div.node-blog h1.node-title a {
     color: black;
 }
 
-body.sidebar-first #content div.node-teaser h2 a:hover{
+body.sidebar-first #content div.node-teaser h2 a:hover,
+body.sidebar-first #content div.node-blog h2.node-title a:hover,
+body.sidebar-first #content div.node-blog h1.node-title a:hover {
     color: black;
     text-decoration: none;
 }
 
-body.sidebar-first #content div.node-teaser span.blog-links a, body.sidebar-first #content div.node-teaser span.blog-links a:hover{
+body.sidebar-first #content div.node-teaser span.blog-links a, 
+body.sidebar-first #content div.node-teaser span.blog-links a:hover,
+body.sidebar-first #content div.node-blog span.blog-links a, 
+body.sidebar-first #content div.node-blog span.blog-links a:hover {
     color: #3366aa;
     font-size: 15px;
     font-family: "Georgia", serif;
@@ -82,11 +103,23 @@ body.sidebar-first #content div.node-teaser span.blog-links a, body.sidebar-firs
     margin-bottom:10px;
 }
 
-body.sidebar-first #content div.node-teaser span.read-more a{
-	font-weight: bold;
+body.sidebar-first #content div.node-teaser span.read-more a,
+body.sidebar-first #content div.node-blog span.read-more a {
+    font-weight: bold;
 }
 
-body.sidebar-first #content div.node-teaser div.blog-comments-share{
+body.sidebar-first #content div.node-teaser div.blog-comments-share,
+body.sidebar-first #content div.node-blog div.blog-comments-share {
     color: #3366aa;
     font-style: italic;
+}
+
+.node-blog .blog-meta .field {
+    float: left;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.node-blog .blog-meta .field-item a {
+    color: #666666;
 }

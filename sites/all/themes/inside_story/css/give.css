@@ -1,0 +1,171 @@
+/* 
+    Document   : give
+    Created on : Nov 29, 2011, 3:11:15 PM
+    Author     : danielcarter
+    Description:
+        Give Page Styles
+*/
+
+.page-node-17 #main-wrapper .region-content {
+    background: white;
+    padding: 50px 40px;
+}
+
+.page-node-17 #main-wrapper .region-content:after {
+    clear:both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.page-node-17 #block-system-main {
+    clear:both;
+}
+
+.page-node-17 #main-wrapper .region-content h2, 
+.page-node-17 #main-wrapper .region-content p {
+    color: black;
+}
+
+#node-17 {
+    margin: auto 380px auto 20px;
+}
+
+#node-17 .field-name-body h3 {
+    color: black;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+#node-17 .field-name-body p {
+    color: black;
+    margin-top: 0;
+}
+
+#block-block-25, 
+#block-block-26,
+#block-webform-client-block-44 {
+    background-color: #ffcc00;
+    color: black;
+    float: left;
+    height: 365px;
+    margin-bottom: 50px;
+    margin-right: 40px;
+    padding-top: 20px;
+    width: 380px;
+
+    -moz-box-shadow: 0px 0px 8px #000;
+    -webkit-box-shadow: 0px 0px 8px #000;
+    box-shadow: 0px 0px 8px #000;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color='#000000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color='#000000');
+}
+
+#block-block-25 h2, 
+#block-block-26 h2,
+#block-webform-client-block-44 h2 {
+    font-family: 'Captureit2Regular';
+    font-size: 75px;
+    margin: 0 20px ;
+}
+
+#block-block-25 .content, 
+#block-block-26 .content {
+    height: auto;
+    position:absolute;
+    bottom: 0px;
+    top: 100px;
+}
+
+#block-webform-client-block-44 > .content {
+    height: auto;
+    position:absolute;
+    bottom: 20px;
+    top: 100px;
+}
+
+#block-webform-client-block-44 #node-44 h2{
+    display: none;
+}
+
+#node-44,
+#node-44 .content{
+    height: 100%;
+}
+
+#block-block-25 .content p, 
+#block-block-26 .content p,
+#block-webform-client-block-44 .content p{
+    margin: 20px;
+}
+
+#block-block-25 .content .block-bottom,
+#block-block-26 .content .block-bottom,
+#block-webform-client-block-44 .block-bottom {
+    background-color: white;
+    bottom: 0px;
+    height: 140px;
+    margin-top: 30px;
+    left: 0px;
+    position:absolute;
+    right: 0px;
+    top: auto;
+    width: auto;
+}
+
+#block-webform-client-block-44 #webform-client-form-44 {
+    background-color: white;
+    bottom: 0px;
+    height: 140px;
+    margin-top: 30px;
+    left: 0px;
+    padding-left: 20px;
+    position:absolute;
+    right: 0px;
+    top: auto;
+    width: auto;
+}
+
+#block-webform-client-block-44 #webform-client-form-44 #webform-component-e-mail {
+    margin-bottom: 0;
+}
+
+#block-webform-client-block-44 #webform-client-form-44 label {
+    display: block;
+    font-family: "Georgia";
+    font-size: 25px;
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 5px;
+    width: 200px;
+}
+
+#block-webform-client-block-44 #webform-client-form-44 label .form-required {
+    display: none;
+}
+
+#block-webform-client-block-44 #webform-client-form-44 #edit-submitted-e-mail {
+    float:left;
+    font-size: 18px;
+    height: 40px;
+    width: 270px;
+}
+
+#block-webform-client-block-44 #webform-client-form-44 #edit-actions {
+    width: 30px;
+    margin: 0;
+    float: left;
+}
+
+#block-webform-client-block-44 #webform-client-form-44 #edit-submit{
+    cursor: pointer;
+    padding: 0;
+    height: 46px;
+    background: black url('../images/controls/follow-me-arrow.png') no-repeat 50% 50%;
+    margin: 0;
+    border: none;
+    width: 30px;
+}

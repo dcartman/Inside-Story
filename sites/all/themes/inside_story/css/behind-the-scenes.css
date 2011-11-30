@@ -30,6 +30,7 @@
 
 .view-display-id-behind_scenes_teaser_block .node-slideshow-image h2 {
     bottom: 10px;
+    display: none;
     font-size: 14px;
     font-weight: 400;
     position:absolute;

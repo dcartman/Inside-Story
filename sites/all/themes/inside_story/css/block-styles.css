@@ -25,3 +25,77 @@
     display: block;
     float: left;
 }
+
+/* Search Block */
+#block-search-form h2 {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: Georgia;
+    font-style: italic;
+    margin: 0 auto;
+}
+
+#search-block-form:after {
+    clear:both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+#search-block-form .form-item {
+    display: block;
+    float: left;
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+#search-block-form .form-actions {
+    display: block;
+    width: 30px;
+    margin: 0;
+    float: left;
+}
+
+#search-block-form .form-submit{
+    color: #ffcc00;
+    cursor: pointer;
+    padding: 0;
+    height: 46px;
+    background: #ffcc00 url('../images/controls/follow-me-arrow.png') no-repeat 50% 50%;
+    margin: 0;
+    border: none;
+    width: 30px;
+}
+
+#search-block-form #edit-search-block-form--2 {
+    height: 40px;
+    width: 150px;
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Blog Categories */
+#block-menu-block-3 h2 {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: Georgia;
+    font-style: italic;
+    margin-bottom: 0; 
+}
+
+#block-menu-block-3 .menu {
+    margin: 0;
+    padding: 0;
+}
+
+#block-menu-block-3 .menu li.leaf {
+    list-style: none;
+}
+
+#block-menu-block-3 .menu li.leaf a {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}

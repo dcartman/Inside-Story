@@ -27,7 +27,7 @@
 }
 
 .not-front #header {
-    background: #000 url("../images/general_header.jpg") no-repeat center top;
+    /* background: #000 url("../images/general_header.jpg") no-repeat center top; */
     height: 350px;
 }
 

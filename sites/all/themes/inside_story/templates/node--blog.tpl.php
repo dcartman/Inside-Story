@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a node.
@@ -80,43 +79,64 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print $user_picture; ?>
-    
-  <div class="blog-date"><?php print $date; ?></div>
+    <?php print $user_picture; ?>
 
-  <div class="blog-meta">
-   	<?php print render($content['field_blog_category']); ?>
-  	<?php print render($content['field_tags']); ?>
-  	<span class="field-label">Contributor:</span> <?php print $name; ?>
-  </div>
+    <div class="blog-date"><?php print $date; ?></div>
 
-  <hr class="blog-yellow" />
+    <div class="blog-meta clearfix">
+        <?php print render($content['field_blog_category']); ?>
+        <?php print render($content['field_tags']); ?>
+        <span class="field contributor">
+            <span class="field-label">Contributor:</span> 
+            <span class="field-items">
+                <span class="field-item"><?php print $name; ?></span>
+            </span>
+        </span>
 
-  <?php print render($title_prefix); ?>
-  
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>    
-  <?php endif; ?>
-    
-  <?php print render($title_suffix); ?>
+    </div>
 
-  <div class="content"<?php print $content_attributes; ?>>
+    <hr class="blog-yellow" />
+
+    <?php print render($title_prefix); ?>
+
+    <?php if (!$page): ?>
+        <h2 class="node-title" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>    
+    <?php else: ?>
+        <h1 class="node-title" <?php print $title_attributes; ?>><?php print $title; ?></h1>
+    <?php endif; ?>
+
+    <?php print render($title_suffix); ?>
+
+    <div class="content"<?php print $content_attributes; ?>>
+        <?php
+        hide($content['field_tags']);
+        hide($content['field_blog_category']);
+        // We hide the comments and links now so that we can render them later.
+        hide($content['comments']);
+        hide($content['links']);
+        print render($content);
+        ?>
+        <?php if(!$page): ?>
+            <span class="read-more blog-links"><a href="?q=<?php print $content['links']['node']['#links']['node-readmore']['href']; ?>"><?php print $content['links']['node']['#links']['node-readmore']['title']; ?></a></span>
+        <?php endif; ?>
+    </div>
+
     <?php
-
-	  hide($content['field_tags']);
-	  hide($content['field_blog_category']);    
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
+    $comments_href = (isset($content['links']['comment']['#links']['comment-comments'])) ?
+            $content['links']['comment']['#links']['comment-comments']['href'] :
+            "#";
     ?>
-    
-    <span class="read-more blog-links"><a href="?q=<?php print $content['links']['node']['#links']['node-readmore']['href'] ;?>"><?php print $content['links']['node']['#links']['node-readmore']['title'] ;?></a></span>
-  </div>
-  <div class="blog-comments-share"> 
-	  <span class="list-comments blog-links"><a href="?q=<?php print $content['links']['comment']['#links']['comment-comments']['href'] ;?>">(<?php if ($content['links']['comment']['#links']['comment-comments']['attributes']['content'] > 0) {print $content['links']['comment']['#links']['comment-comments']['attributes']['content']; } else { print "0";} ;?>) Comments</a></span> | 
-	  <span class="add-comment blog-links"><a href="?q=<?php print $content['links']['comment']['#links']['comment-add']['href'] ;?>">Post a Comment</a></span> 
-  </div>  
-  <?php print render($content['comments']); ?>
+    <?php
+    $add_comment_href = ($content['links']['comment']['#links']['comment-add']) ?
+            $content['links']['comment']['#links']['comment-add']['href'] :
+            "#";
+    ?>
+
+
+    <div class="blog-comments-share">  
+        <span class="list-comments blog-links"><a href="?q=<?php print $comments_href; ?>">(<?php print $comment_count; ?>) Comments</a></span> | 
+        <span class="add-comment blog-links"><a href="?q=<?php print $add_comment_href; ?>">Post a Comment</a></span>
+    </div>  
+    <?php print render($content['comments']); ?>
 
 </div>

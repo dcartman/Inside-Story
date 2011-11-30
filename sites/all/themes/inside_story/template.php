@@ -4,7 +4,10 @@ function inside_story_breadcrumb($variables) {
     $breadcrumb = $variables['breadcrumb'];
     if (!empty($breadcrumb)) {
         // Adding the title of the current page to the breadcrumb.
-
+        if (isset($breadcrumb[1]) && preg_match('/>'. 'Blogs' . '</', $breadcrumb[1])) {         // For blog nodes... 
+            unset($breadcrumb[2]);                     // ...remove "user's blog"...                             
+            //unset($breadcrumb[1]);                  // ...and "blogs".
+        }
         if (preg_match('/>' . addcslashes(drupal_get_title(), "/") . '</', $breadcrumb[count($breadcrumb) - 1])) {
             array_pop($breadcrumb);
         }

@@ -1,0 +1,47 @@
+/* 
+    Document   : the-science-cast
+    Created on : Nov 30, 2011, 10:30:07 AM
+    Author     : danielcarter
+    Description:
+        The Science Cast block styles
+*/
+
+#block-views-01f4a2016413c05824a5307ef26127b2 h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.view-display-id-the_science_cast_previews_block .view-header p {
+    font-weight: bold;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+.view-display-id-the_science_cast_previews_block .views-row {
+    float: left;
+    margin-bottom: 60px;
+    width: 300px;
+}
+
+.view-display-id-the_science_cast_previews_block .views-row-1,
+.view-display-id-the_science_cast_previews_block .views-row-2,
+.view-display-id-the_science_cast_previews_block .views-row-4,
+.view-display-id-the_science_cast_previews_block .views-row-5,
+.view-display-id-the_science_cast_previews_block .views-row-7,
+.view-display-id-the_science_cast_previews_block .views-row-9 {
+    margin-right: 20px;
+}
+
+.view-display-id-the_science_cast_previews_block .view-content:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.view-display-id-the_science_cast_previews_block .views-row h2.node-title {
+    display: none;
+}
