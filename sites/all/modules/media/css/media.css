@@ -197,6 +197,15 @@
   position:  absolute;
 }
 
+.media-list-thumbnails .media-item .media-thumbnail {
+    height: 100px;
+    overflow: hidden;
+}
+
+.media-list-thumbnails .media-item .media-thumbnail img {
+    height: 100%;
+}
+
 .media-item .media-type-icon {
   border: none;
   margin: 0 0 -5px;

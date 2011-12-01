@@ -123,3 +123,57 @@ body.sidebar-first #content div.node-blog div.blog-comments-share {
 .node-blog .blog-meta .field-item a {
     color: #666666;
 }
+
+
+/* Comments */
+#comment-form .filter-wrapper {
+    display:none;
+}
+
+#comment-form label {
+    color: black;
+    font-family: "Georgia";
+    font-style: italic;
+}
+
+#comments .title.comment-form {
+    color: black;
+    font-family: "Georgia";
+    font-style: italic;
+}
+
+#comment-form #edit-name {
+    width: 419px;
+}
+
+#comment-form input {
+    font-size: 18px;
+    height: 30px;
+    width: 419px;
+}
+
+#comment-form textarea {
+    height: 140px;
+}
+
+#comment-form .form-actions:after {
+    clear:both;
+    content: ".";
+    display:block;
+    height: 0px;
+    visibility: hidden;
+}
+
+#comment-form .form-actions .form-submit {
+    color: black;
+    cursor: pointer;
+    float:right;
+    font-size: 16px;
+    font-family: 'AlteHaasGroteskBold';
+    padding: 0;
+    height: 40px;
+    background: #ffcc00 url('../images/controls/follow-me-arrow.png') no-repeat 90% 50%;
+    margin: 0;
+    border: none;
+    width: 90px;
+}

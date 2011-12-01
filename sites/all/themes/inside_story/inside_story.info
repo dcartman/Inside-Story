@@ -15,6 +15,7 @@ regions[navigation] = Navigation
 regions[highlighted] = Highlighted
 regions[help] = Help
 regions[secondary_nav] = Secondary Navigation
+regions[upper_callouts] = Upper Callouts
 regions[content] = Content
 regions[sidebar_first] = Sidebar First
 regions[sidebar_second] = Sidebar Second

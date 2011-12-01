@@ -127,6 +127,14 @@
                     </div>
                 </div>
             <?php endif; ?>
+            
+            <?php if (isset($page['upper_callouts'])): ?>
+                <div id="upper_callouts">
+                    <div class="section">
+                        <?php print render($page['upper_callouts']); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
 
             <?php if ($breadcrumb): ?>
                 <div id="breadcrumb"><div class="section"><?php print $breadcrumb; ?></div></div>

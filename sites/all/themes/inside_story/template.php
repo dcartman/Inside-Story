@@ -5,13 +5,17 @@ function inside_story_breadcrumb($variables) {
     if (!empty($breadcrumb)) {
         // Adding the title of the current page to the breadcrumb.
         if (isset($breadcrumb[1]) && preg_match('/>'. 'Blogs' . '</', $breadcrumb[1])) {         // For blog nodes... 
-            unset($breadcrumb[2]);                     // ...remove "user's blog"...                             
+            unset($breadcrumb[2]);                     // ...remove "user's blog"... 
+            $breadcrumb[1] = preg_replace('/>'. 'Blogs' . '</', '/>'. 'Blog' . '</', $breadcrumb[1]);                            
             //unset($breadcrumb[1]);                  // ...and "blogs".
         }
         if (preg_match('/>' . addcslashes(drupal_get_title(), "/") . '</', $breadcrumb[count($breadcrumb) - 1])) {
             array_pop($breadcrumb);
         }
-        $breadcrumb[] = "<a href='#content' class='current-page'>" . drupal_get_title() . "</a>";
+        
+        $title = (drupal_get_title() == "Blogs") ? "Blog" : drupal_get_title();
+        
+        $breadcrumb[] = "<a href='#content' class='current-page'>" . $title . "</a>";
 
 
         // Provide a navigational heading to give context for breadcrumb links to

@@ -127,9 +127,9 @@
             "#";
     ?>
     <?php
-    $add_comment_href = ($content['links']['comment']['#links']['comment-add']) ?
+    $add_comment_href = (isset($content['links']['comment']['#links']['comment-add'])) ?
             $content['links']['comment']['#links']['comment-add']['href'] :
-            "#";
+            $node_url."#comment-form";
     ?>
 
 

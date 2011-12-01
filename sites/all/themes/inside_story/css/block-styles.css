@@ -6,11 +6,41 @@
         These styles are for blocks that are insignicant in their style requirements
 */
 
+/* Press */
+#block-block-27 {
+    position: absolute;
+    left: auto;
+    right: 0;
+}
+
+#block-block-27 .content a {
+    color: white;
+}
+
+.node-type-blog #upper_callouts,
+.page-blog #upper_callouts{
+    height: 57px;
+}
+
 /* Synopsis */
 #block-block-11 {
     float: right;
     margin-left: 50px;
     width: 300px;
+}
+
+/* Logos - Footers */
+#block-block-10 .content span {
+    display: inline-block;
+    padding: 0 10px;
+    overflow: hidden;
+    height: 70px;
+}
+
+#block-block-10 .content span img {
+    height: 175px;
+    vertical-align: middle;
+    margin-top: -50px;
 }
 
 /* Partners */
@@ -21,9 +51,19 @@
     margin-bottom: 40px;
 }
 
-#partner-logos img {
-    display: block;
-    float: left;
+#partner-logos {
+    text-align: center;
+}
+
+#partner-logos span {
+    display: inline-block;
+    padding: 0 10px;
+    height: 200px;
+    overflow: hidden;
+}
+
+#partner-logos span img {
+    height: 100%;
 }
 
 /* Search Block */

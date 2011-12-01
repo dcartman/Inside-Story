@@ -17,7 +17,7 @@
 }
 
 .modal-dialog-box {
-    background: rgb(0,0,0);
+
     background-color: rgba(0, 0, 0, 0.7);
     bottom: 0;
     display:none;
@@ -29,10 +29,10 @@
     z-index: 1000;
 
     /* Transparent Background For IE 5.5 - 7*/
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA000000, endColorstr=#AA000000);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#99000000', EndColorStr='#99000000')
 
     /* Transparent Background For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA000000, endColorstr=#AA000000)";
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorstr=#99000000, SndColorstr=#99000000)";
 }
 
 .modal-dialog-box .box-container {

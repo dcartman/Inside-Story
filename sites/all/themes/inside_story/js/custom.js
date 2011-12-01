@@ -10,9 +10,11 @@
                 "callback": function(data,t,XHR) {
                     var me = this,
                     title = "<span class='title-text'>"+ jQuery(data).find('item title').first().text() +"</span>",
-                    content = jQuery(data).find('item description').first().text(),
-                    role = jQuery(content).filter('.field-name-field-film-role').first().text(),
-                    image = "<span class='title-image'>"+ this.makeImage(role) +"</span>";
+                    content = jQuery(data).find('item description').first().text();
+                    if(!content) content = jQuery(data).filter('item description').first().text();
+                    
+                    var role = jQuery(content).filter('.field-name-field-film-role').first().text(),
+                        image = "<span class='title-image'>"+ this.makeImage(role) +"</span>";
     
                     this.modalContent.html(content);
                     this.modalContent.ready(function() {
@@ -36,6 +38,7 @@
                     var me = this,
                     title = "<span class='title-text'>"+ jQuery(data).find('item title').first().text() +"</span>",
                     content = jQuery(data).find('item description').first().text();
+                    if(!content) content = jQuery(data).filter('item description').first().text();
     
                     this.modalContent.html(content);
                     this.modalContent.ready(function() {
@@ -61,8 +64,11 @@
                 },
                 "callback": function(data,t,XHR) {
                     var me = this
-                        StartingSlide = 0;
-                    jQuery(data).find('item').each(function(i,e) {
+                        StartingSlide = 0
+                        items = jQuery(data).find('item');
+                    if(items.length == 0) items = jQuery(data).filter('item');
+                     
+                    items.each(function(i,e) {
 
                         var title = "<div class='title-text'>"+ jQuery(e).find('title').text() +"</div>",
                             content = jQuery(e).find('description').first().text(),
@@ -147,7 +153,7 @@ function ActivateModal(ele, h) {
     this.nodeHref = this.getNodeHref();
     this.nodeId = this.getNodeId();
     
-    this.url = this.url || jQuery(this.element).find('h2 a').attr('href') + this.urlModifier;
+    this.setUrl();
     this.data = this.data || ""
     this.dataType = this.dataType || "html"
     
@@ -167,6 +173,12 @@ function ActivateModal(ele, h) {
 ActivateModal.processModal = function(ele, h) {
     var h = h || {},
     modal = new ActivateModal(ele, h);
+}
+
+ActivateModal.prototype.setUrl = function() {
+    this.url = this.url || jQuery(this.element).find('h2 a').attr('href') + this.urlModifier;
+    if(!this.url.match("q=")) this.url = "?q=" + this.url;
+    
 }
 
 ActivateModal.prototype.loadData = function(event) {
