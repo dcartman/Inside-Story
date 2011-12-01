@@ -128,15 +128,19 @@
     ?>
     <?php
     $add_comment_href = (isset($content['links']['comment']['#links']['comment-add'])) ?
-            $content['links']['comment']['#links']['comment-add']['href'] :
-            $node_url."#comment-form";
+            $node_url."#comment-form-anchor" :
+            "#comment-form-anchor";
     ?>
 
 
     <div class="blog-comments-share">  
         <span class="list-comments blog-links"><a href="?q=<?php print $comments_href; ?>">(<?php print $comment_count; ?>) Comments</a></span> | 
-        <span class="add-comment blog-links"><a href="?q=<?php print $add_comment_href; ?>">Post a Comment</a></span>
+        <span class="add-comment blog-links"><a href="<?php print $add_comment_href; ?>">Post a Comment</a></span>
     </div>  
-    <?php print render($content['comments']); ?>
-
+    
+        <?php if ($page): ?>
+            <a id="comment-form-anchor" >&nbsp;</a>
+        <?php endif; ?>
+        <?php print render($content['comments']); ?>
+        
 </div>
