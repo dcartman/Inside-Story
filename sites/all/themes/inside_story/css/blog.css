@@ -10,24 +10,19 @@ body.sidebar-first #content div.node-blog {
 
 }
 
-body.sidebar-first #content div.node-teaser pre,
-body.sidebar-first #content div.node-blog pre{
+#content div.node-blog pre{
     background: black;
     border: 2px solid red;
     padding: 10px;	
 }
 
-body.sidebar-first #content div.node-teaser p, 
-body.sidebar-first #content div.node-teaser div.blog-meta, 
-body.sidebar-first #content div.node-teaser div.blog-date,
-body.sidebar-first #content div.node-blog p, 
-body.sidebar-first #content div.node-blog div.blog-meta, 
-body.sidebar-first #content div.node-blog div.blog-date{
+#content .node-blog p, 
+#content .node-blog div.blog-meta, 
+#content .node-blog div.blog-date{
     color: black;
 }	
 
-body.sidebar-first #content div.node-teaser div.blog-date,
-body.sidebar-first #content div.node-blog div.blog-date{
+.node-blog div.blog-date{
     background-color: #ffcc00;
     font-size: 20px;
     line-height: 20px;
@@ -50,25 +45,23 @@ hr.blog-yellow{
 
 }
 
-body.sidebar-first #content div.node-teaser div.content,
-body.sidebar-first #content div.node-blog div.content {
+.node-blog div.content {
     border-top: 1px dotted black;
     border-bottom: 1px dotted black;
     padding: 10px 0;
     margin-bottom: 20px;
 }
 
-body.sidebar-first #content div.node-teaser p,
-body.sidebar-first #content div.node-blog p {
+
+#content .node-blog p {
     font-family: "Georgia", serif;
     color: black;
     font-size: 15px;
     line-height: 21px;
 }
 
-body.sidebar-first #content div.node-teaser h2,
-body.sidebar-first #content div.node-blog h2.node-title,
-body.sidebar-first #content div.node-blog h1.node-title {
+#content .node-blog h2.node-title,
+#content .node-blog h1.node-title {
     font-family: "Georgia", serif;
     color: black;
     text-decoration: none;
@@ -78,23 +71,20 @@ body.sidebar-first #content div.node-blog h1.node-title {
     margin: 20px 0;
 }
 
-body.sidebar-first #content div.node-teaser h2 a,
-body.sidebar-first #content div.node-blog h2.node-title a,
-body.sidebar-first #content div.node-blog h1.node-title a {
+
+#content .node-blog h2.node-title a,
+#content .node-blog h1.node-title a {
     color: black;
 }
 
-body.sidebar-first #content div.node-teaser h2 a:hover,
-body.sidebar-first #content div.node-blog h2.node-title a:hover,
-body.sidebar-first #content div.node-blog h1.node-title a:hover {
+#content .node-blog h2.node-title a:hover,
+#content .node-blog h1.node-title a:hover {
     color: black;
     text-decoration: none;
 }
 
-body.sidebar-first #content div.node-teaser span.blog-links a, 
-body.sidebar-first #content div.node-teaser span.blog-links a:hover,
-body.sidebar-first #content div.node-blog span.blog-links a, 
-body.sidebar-first #content div.node-blog span.blog-links a:hover {
+#content .node-blog span.blog-links a, 
+#content .node-blog span.blog-links a:hover {
     color: #3366aa;
     font-size: 15px;
     font-family: "Georgia", serif;
@@ -103,13 +93,11 @@ body.sidebar-first #content div.node-blog span.blog-links a:hover {
     margin-bottom:10px;
 }
 
-body.sidebar-first #content div.node-teaser span.read-more a,
-body.sidebar-first #content div.node-blog span.read-more a {
+#content .node-blog span.read-more a {
     font-weight: bold;
 }
 
-body.sidebar-first #content div.node-teaser div.blog-comments-share,
-body.sidebar-first #content div.node-blog div.blog-comments-share {
+#content .node-blog div.blog-comments-share {
     color: #3366aa;
     font-style: italic;
 }
@@ -126,6 +114,39 @@ body.sidebar-first #content div.node-blog div.blog-comments-share {
 
 
 /* Comments */
+.node-blog #comments {
+    color: black;
+    font-family: Georgia;
+}
+
+.node-blog #comments .title {
+    color: black;
+    font-family: Georgia;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.node-blog #comments .comment {
+    border-bottom: 1px dotted black;
+}
+
+.node-blog #comments .comment p {
+    font-size: 14px;
+    line-height: normal;
+    margin:0;
+}
+
+.node-blog #comments .submitted {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.node-blog #comments .comment div.content {
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+}
+
 #comment-form .filter-wrapper {
     display:none;
 }

@@ -60,7 +60,7 @@
                 "dataType": "XML",
                 "afterClose": function() {
                     this.modalContent.cycle('destroy');
-                    this.container.find('.pager').html("");
+                    this.container.find('.control').remove();
                 },
                 "callback": function(data,t,XHR) {
                     var me = this
@@ -83,9 +83,9 @@
                     });
                     
                     this.modalContent
-                        .after('<div class="next-slide button">&nbsp;</div>')
-                        .after('<div class="prev-slide button">&nbsp;</div>')
-                        .after('<div class="pager clearfix"></div>');
+                        .after('<div class="next-slide button control">&nbsp;</div>')
+                        .after('<div class="prev-slide button control">&nbsp;</div>')
+                        .after('<div class="pager clearfix control"></div>');
                     
                     this.modalContent.cycle({ 
                         containerResize: true,
