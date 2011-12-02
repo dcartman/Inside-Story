@@ -1,0 +1,290 @@
+<?php
+
+/**
+ * @file Provide contextual theme settings via context module
+ */
+
+define('DELTA_PRESERVE', 'preserve');
+define('DELTA_OVERRIDE', 'override');
+
+global $delta;
+
+/**
+ * Implements hook_menu_alter().
+ */
+function delta_menu_alter(&$items) {
+  $items['admin/appearance/settings']['page arguments'] = array();
+  $items['admin/appearance/settings']['page callback'] = 'delta_theme_settings';
+  
+  foreach (list_themes() as $theme) {
+    $items['admin/appearance/settings/' . $theme->name]['page arguments'] = array($theme->name);
+    $items['admin/appearance/settings/' . $theme->name]['page callback'] = 'delta_theme_settings';
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_type().
+ */
+function delta_ctools_plugin_type() {
+  return array(
+    'plugins' => array(
+      'cache' => TRUE,
+      'use hooks' => TRUE,
+      'classes' => array('handler'),
+      'load themes' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_delta_plugins().
+ */
+function delta_delta_plugins() {
+  return array(
+    'delta_injection' => array(
+      'handler' => array(
+        'path' => drupal_get_path('module', 'delta') . '/plugins/delta',
+        'file' => 'delta_injection.inc',
+        'class' => 'delta_injection',
+      ),
+    ),
+    'delta_injection_theme_settings' => array(
+      'handler' => array(
+        'path' => drupal_get_path('module', 'delta') . '/plugins/delta',
+        'file' => 'delta_injection_theme_settings.inc',
+        'class' => 'delta_injection_theme_settings',
+        'parent' => 'delta_injection',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_context_plugins().
+ */
+function delta_context_plugins() {
+  return array(
+    'context_reaction_delta' => array(
+      'handler' => array(
+        'path' => drupal_get_path('module', 'delta') . '/plugins/context',
+        'file' => 'context_reaction_delta.inc',
+        'class' => 'context_reaction_delta',
+        'parent' => 'context_reaction',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_context_registry().
+ */
+function delta_context_registry() {
+  return array(
+  	'reactions' => array(
+      'delta' => array(
+        'title' => t('Delta'),
+        'description' => t('Apply contextual theme settings via the Delta module.'),
+        'plugin' => 'context_reaction_delta',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_context_page_reaction().
+ */
+function delta_context_page_reaction(){
+  if ($plugin = context_get_plugin('reaction', 'delta')) {
+    $plugin->execute();
+  }
+}
+
+/**
+ * Implements hook_load().
+ */
+function delta_load($name) {
+  ctools_include('export');
+
+  $template = ctools_export_crud_load('delta', $name);
+  
+  return !empty($template) ? $template : FALSE;
+}
+
+/**
+ * @todo
+ */
+function delta_load_all($reset = FALSE) {
+  return ctools_export_crud_load_all('delta', $reset);
+}
+
+/**
+ * @todo
+ */
+function delta_valid($name, $theme) {
+  $template = delta_load($name);
+
+  return $template && $template->theme == $theme;
+}
+
+/**
+ * @todo
+ */
+function delta_enabled($name) {
+  $template = delta_load($name);
+  
+  return $template && (!isset($template->disabled) || !$template->disabled);
+}
+
+/**
+ * @todo
+ */
+function delta_get_plugin($template, $name, $reset = FALSE) {
+  $plugins = delta_get_plugins($template, $reset);
+  
+  return isset($plugins[$name]) ? $plugins[$name] : FALSE;
+}
+
+/**
+ * @todo
+ */
+function delta_get_plugins($template, $reset = FALSE) {
+  $cache = &drupal_static(__FUNCTION__);
+
+  if (!isset($cache[$template->machine_name]) || $reset) {
+    ctools_include('plugins');
+    
+    foreach (ctools_get_plugins('delta', 'plugins') as $plugin) {
+      if ($plugin['name'] != 'delta_injection') {
+        if ($class = ctools_plugin_get_class($plugin, 'handler')) {
+          $cache[$template->machine_name][$plugin['name']] = new $class($plugin, $template);
+        }
+      }
+    }
+  }
+  
+  return isset($cache[$template->machine_name]) ? $cache[$template->machine_name] : FALSE;
+}
+
+/**
+ * @todo
+ */
+function delta_inject($template) {
+  global $delta;
+  
+  if (isset($delta)) {
+    delta_revoke($delta);
+  }
+
+  foreach (delta_get_plugins($template) as $plugin) {
+    $plugin->inject();
+  }
+
+  module_invoke_all('delta_inject', $template);
+ 
+  $delta = $template;
+}
+
+/**
+ * @todo
+ */
+function delta_revoke($template) {
+  global $delta;
+  
+  foreach (delta_get_plugins($template) as $plugin) {
+    $plugin->revoke();
+  }
+    
+  module_invoke_all('delta_revoke', $template);
+  
+  $delta = NULL;
+}
+
+/**
+ * @todo
+ */
+function delta_variable_set($name, $value) {
+  global $conf;
+
+  $original = isset($conf[$name]) ? $conf[$name] : NULL;
+  $conf[$name] = $value;
+
+  return $original;
+}
+
+/**
+ * @todo
+ */
+function delta_ancestors($name) {
+  $ancestors = array();
+
+  if ($template = delta_load($name)) {
+    $ancestors[$template->machine_name] = $template;
+    
+    if (!empty($delta->parent)) {      
+      $ancestors = array_merge($ancestors, delta_ancestors($template->parent));
+    }
+  }
+
+  return $ancestors;
+}
+
+/**
+ * @todo
+ */
+function delta_merge($first, $second) {
+  if (is_array($first) && is_array($second)) {
+    return array_merge($first, $second);
+  }  
+  
+  if (is_object($first) && is_object($second)) {
+    return (object) array_merge((array) $first, (array) $second);
+  }
+  
+  return $second;
+}
+
+/**
+ * @todo
+ */
+function delta_reduce($first, $second) {
+  if (is_array($first) && is_array($second)) {
+    foreach ($first as $name => $value) {
+      if (isset($second[$name]) && $first[$name] === $second[$name]) {
+        unset($first[$name]);
+      }
+    }
+  }
+  else if (is_object($first) && is_object($second)) {
+    foreach ($first as $name => $value) {
+      if (isset($second->$name) && $first->$name === $second->$name) {
+        unset($first->$name);
+      }
+    }
+  }
+  else {
+    if ($first === $second) {
+      $first = NULL;
+    }
+  }
+
+  return $first;
+}
+
+/**
+ * @todo
+ */
+function delta_theme_settings($key = NULL) {
+  $backup = $GLOBALS['delta'];
+
+  if (isset($backup)) {
+    delta_revoke($backup);
+  }
+  
+  $form = drupal_get_form('system_theme_settings', $key);
+  
+  if (isset($backup)) {
+    delta_inject($backup);
+  }
+  
+  return $form;
+}

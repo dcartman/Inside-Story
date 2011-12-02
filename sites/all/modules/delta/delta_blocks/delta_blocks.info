@@ -1,0 +1,13 @@
+name = Delta Blocks
+description = Exposes a number of core Drupal elements as blocks.
+core = 7.x
+version = 7.x-3.x-dev
+package = Theme Tools
+
+
+; Information added by drupal.org packaging script on 2011-05-23
+version = "7.x-3.0-beta4"
+core = "7.x"
+project = "delta"
+datestamp = "1306183316"
+

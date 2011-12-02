@@ -1,0 +1,15 @@
+name = Delta Color
+description = Makes the color module available for Delta templates.
+core = 7.x
+version = 7.x-3.x-dev
+package = Theme Tools
+
+dependencies[] = delta
+
+
+; Information added by drupal.org packaging script on 2011-05-23
+version = "7.x-3.0-beta4"
+core = "7.x"
+project = "delta"
+datestamp = "1306183316"
+
