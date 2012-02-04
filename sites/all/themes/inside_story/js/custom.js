@@ -14,7 +14,7 @@
                     if(!content) content = jQuery(data).filter('item description').first().text();
                     
                     var role = jQuery(content).filter('.field-name-field-film-role').first().text(),
-                        image = "<span class='title-image'>"+ this.makeImage(role) +"</span>";
+                    image = "<span class='title-image'>"+ this.makeImage(role) +"</span>";
     
                     this.modalContent.html(content);
                     this.modalContent.ready(function() {
@@ -50,6 +50,29 @@
             });
         }) 
     });
+    $(document).ready(function() {
+        $('body.front #trailer-play-button').each(function(i,e) {
+            modal = new ActivateModal(e, {
+                "selector": ".modal-dialog-box",
+                "AjaxCall": false,
+                "data": '<iframe width="853" height="480" src="http://www.youtube.com/embed/Q-MiFgB__X4?rel=0" frameborder="0" allowfullscreen></iframe>',
+                "afterClose": function() {
+                    
+                    this.container.find('.control').remove();
+                },
+                "callback": function(data) {
+                    var me = this; 
+ 
+                    me.modalContent.append( jQuery(data) );
+                    me.modalContent.css('background', 'transparent')
+                    me.modalContent.ready(function() {
+                        me.openContent();
+                    });
+                    
+                }
+            }); 
+        }); 
+    });
     // slideshow
     $(document).ready(function() {
         $('.node-slideshow-image').each(function(i,e) {
@@ -64,15 +87,15 @@
                 },
                 "callback": function(data,t,XHR) {
                     var me = this
-                        StartingSlide = 0
-                        items = jQuery(data).find('item');
+                    StartingSlide = 0
+                    items = jQuery(data).find('item');
                     if(items.length == 0) items = jQuery(data).filter('item');
                      
                     items.each(function(i,e) {
 
                         var title = "<div class='title-text'>"+ jQuery(e).find('title').text() +"</div>",
-                            content = jQuery(e).find('description').first().text(),
-                            slide = jQuery("<div class='slide'>"+ content +"</div>");
+                        content = jQuery(e).find('description').first().text(),
+                        slide = jQuery("<div class='slide'>"+ content +"</div>");
                         
                         // slide.find('.field-name-body').before(title);
                         
@@ -83,9 +106,9 @@
                     });
                     
                     this.modalContent
-                        .after('<div class="next-slide button control">&nbsp;</div>')
-                        .after('<div class="prev-slide button control">&nbsp;</div>')
-                        .after('<div class="pager clearfix control"></div>');
+                    .after('<div class="next-slide button control">&nbsp;</div>')
+                    .after('<div class="prev-slide button control">&nbsp;</div>')
+                    .after('<div class="pager clearfix control"></div>');
                     
                     this.modalContent.cycle({ 
                         containerResize: true,
@@ -153,6 +176,8 @@ function ActivateModal(ele, h) {
     this.nodeHref = this.getNodeHref();
     this.nodeId = this.getNodeId();
     
+    this.AjaxCall = this.AjaxCall || true;
+    
     this.setUrl();
     this.data = this.data || ""
     this.dataType = this.dataType || "html"
@@ -184,15 +209,22 @@ ActivateModal.prototype.setUrl = function() {
 ActivateModal.prototype.loadData = function(event) {
     var ele = event.currentTarget || event.srcElement,
     me = ele.object;
-    jQuery.ajax({
-        url: me.url,
-        context: me,
-        data: me.data,
-        dataType: me.dataType,
-        success: me.processData,
-        error: me.showError
-    })    
-    me.openModal('loading');
+    if( this.AjaxCall ) {
+        jQuery.ajax({
+            url: me.url,
+            context: me,
+            data: me.data,
+            dataType: me.dataType,
+            success: me.processData,
+            error: me.showError
+        }); 
+        me.openModal('loading');
+    } else {
+        me.openModal('loading');
+        me.processData(me.data);
+    }
+       
+    
         
 }
 
@@ -259,16 +291,16 @@ ActivateModal.prototype.showError = function(jqXHR, textStatus, errorThrown) {
 
 ActivateModal.prototype.getNodeId = function(href) {
     var me = this,
-        href = href || this.nodeHref,
-        id = href.split('/').pop();
+    href = href || this.nodeHref,
+    id = (href) ? href.split('/').pop() : null;
     
-    return (id.match(/\d/g).length == id.length) ? id : null;
+    return (id && id.match(/\d/g).length == id.length) ? id : null;
 }
 
 ActivateModal.prototype.getNodeHref = function() {
     var me = this,
-        href = href = jQuery(this.element).find('h2 a').attr('href');
-        return href.split('=').pop();
+    href = jQuery(this.element).find('h2 a').attr('href');
+    return (href) ? href.split('=').pop() : null;
 }
 
 

@@ -139,3 +139,17 @@
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.trailer-play-button-container {
+    left: 521px;
+    top: 130px;
+    position:absolute;
+    z-index: 5;
+       
+}
+
+.trailer-play-button-container #trailer-play-button {
+    background: transparent url('../images/controls/play-button.png') no-repeat 50% 50%; 
+    height: 113px;
+    width:113px;
+}
