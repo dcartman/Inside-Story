@@ -176,7 +176,7 @@ function ActivateModal(ele, h) {
     this.nodeHref = this.getNodeHref();
     this.nodeId = this.getNodeId();
     
-    this.AjaxCall = this.AjaxCall || true;
+    this.AjaxCall = (this.AjaxCall === false) ? false : true ;
     
     this.setUrl();
     this.data = this.data || ""
@@ -209,7 +209,7 @@ ActivateModal.prototype.setUrl = function() {
 ActivateModal.prototype.loadData = function(event) {
     var ele = event.currentTarget || event.srcElement,
     me = ele.object;
-    if( this.AjaxCall ) {
+    if( me.AjaxCall ) {
         jQuery.ajax({
             url: me.url,
             context: me,
