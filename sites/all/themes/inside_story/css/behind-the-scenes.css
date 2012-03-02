@@ -23,9 +23,9 @@
 }
 
 .view-display-id-behind_scenes_teaser_block .node-slideshow-image {
-/* 
-   add spacing between images
-*/    
+    /* 
+       add spacing between images
+    */    
 }
 
 .view-display-id-behind_scenes_teaser_block .node-slideshow-image h2 {
@@ -46,11 +46,11 @@
 }
 
 .view-display-id-behind_scenes_teaser_block .node-slideshow-image .content {
-    
+
 }
 
 .view-display-id-behind_scenes_teaser_block .node-slideshow-image .content .field-name-field-single-image {
-    
+
 }
 
 
@@ -73,3 +73,22 @@
 }
 
 /* Video Slideshow */
+.view-behind-the-scenes-video-list:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.view-behind-the-scenes-video-list .views-row {
+    float: left;
+    margin-right: 10px;
+}
+
+.view-behind-the-scenes-video-list .views-row h2 {
+    max-width: 300px;
+    max-height: 22px;
+    overflow: hidden;
+}
+
